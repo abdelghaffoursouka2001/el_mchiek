@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdelghaffour El Mchiek — Portfolio</title>
+<meta name="description" content="Portfolio d'Abdelghaffour El Mchiek — Ingénieur en simulation minière, développement d'applications d'analyse de données et agents IA." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0e1a;
+    --bg-card: #111827;
+    --border: #1f2937;
+    --border-light: #374151;
+    --text: #e4e7ef;
+    --text-dim: #9ca3af;
+    --text-muted: #6b7280;
+    --accent: #3b82f6;
+    --accent-2: #10b981;
+    --accent-3: #f59e0b;
+    --accent-4: #8b5cf6;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* Animated background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(10, 14, 26, 0.7);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  nav .logo span { color: var(--accent); }
+  nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--text); }
+  .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; }
+
+  /* Sections */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px 60px;
+  }
+  .section-label {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-label::before { content: '// '; color: var(--text-muted); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px;
+  }
+  .hero .greeting {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+  .hero h1 .gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent-4) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero h2 {
+    font-size: clamp(24px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--text-dim);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -1px;
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+  }
+  .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .btn-outline:hover { background: rgba(59, 130, 246, 0.1); transform: translateY(-2px); }
+
+  /* Section titles */
+  h2.section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  h2.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 300px;
+  }
+  h2.section-title .num {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6em;
+    font-weight: 400;
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+    align-items: start;
+  }
+  .about-text p { margin-bottom: 16px; color: var(--text-dim); font-size: 16px; }
+  .about-text strong { color: var(--text); font-weight: 500; }
+  .about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .about-card h3 {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-row .label { color: var(--text-muted); }
+  .info-row .value { color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.2s;
+  }
+  .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .skill-card .icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .skill-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .skill-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  .tag.green { background: rgba(16, 185, 129, 0.1); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.2); }
+  .tag.orange { background: rgba(245, 158, 11, 0.1); color: #fcd34d; border-color: rgba(245, 158, 11, 0.2); }
+  .tag.purple { background: rgba(139, 92, 246, 0.1); color: #d8b4fe; border-color: rgba(139, 92, 246, 0.2); }
+
+  /* Projects */
+  .project {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    transition: all 0.3s;
+  }
+  .project:hover {
+    border-color: var(--border-light);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .project.reverse .project-grid { direction: rtl; }
+  .project.reverse .project-content { direction: ltr; }
+  .project.reverse .project-visual { direction: ltr; }
+  .project-visual {
+    background: linear-gradient(135deg, var(--bg) 0%, #0f1626 100%);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(59, 130, 246, 0.03) 40px, rgba(59, 130, 246, 0.03) 41px),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(59, 130, 246, 0.03) 40px, rgba(59, 130, 246, 0.03) 41px);
+  }
+  .project-visual .mock {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  }
+  .mock-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .mock-dot:nth-child(1) { background: #ef4444; }
+  .mock-dot:nth-child(2) { background: #f59e0b; }
+  .mock-dot:nth-child(3) { background: #10b981; }
+  .mock-content { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); }
+  .mock-line { padding: 4px 0; }
+  .mock-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border-radius: 3px;
+    margin: 4px 0;
+  }
+  .mock-bar.w-60 { width: 60%; }
+  .mock-bar.w-80 { width: 80%; }
+  .mock-bar.w-45 { width: 45%; background: linear-gradient(90deg, var(--accent-3), var(--accent-4)); }
+  .mock-bar.w-70 { width: 70%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
+
+  .project-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .project-meta {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .project-content h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .project-content p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .project-content ul {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .project-content ul li {
+    color: var(--text-dim);
+    font-size: 14px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .project-content ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .project-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .project-links a {
+    color: var(--text-dim);
+    font-size: 20px;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .project-links a:hover { color: var(--accent); }
+
+  /* Contact */
+  .contact {
+    text-align: center;
+    padding: 140px 40px 100px;
+  }
+  .contact h2.section-title {
+    justify-content: center;
+  }
+  .contact h2.section-title::after { display: none; }
+  .contact p {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 500px;
+    margin: 0 auto 36px;
+  }
+  .contact .btn-primary {
+    padding: 18px 40px;
+    font-size: 16px;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .social-links a {
+    color: var(--text-dim);
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--accent); transform: translateY(-2px); }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 30px 40px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    nav ul { display: none; }
+    section { padding: 80px 20px 40px; }
+    .about-grid, .project-grid { grid-template-columns: 1fr; }
+    .project.reverse .project-grid { direction: ltr; }
+    .project-visual { min-height: 240px; padding: 24px; }
+    .project-content { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">AEM<span>.</span></div>
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="greeting mono">{ Bonjour, je suis }</div>
+    <h1><span class="gradient">Abdelghaffour</span><br/>El Mchiek.</h1>
+    <h2>Je modélise, j'analyse,<br/>je construis des outils intelligents.</h2>
+    <p>
+      Ingénieur en simulation d'opérations minières. Je conçois des modèles de simulation
+      avec AnyLogic, je développe des applications d'analyse de données, et j'intègre
+      l'intelligence artificielle pour transformer les données en décisions.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
+      <a href="#contact" class="btn btn-outline">Me contacter</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <span class="section-label">À propos</span>
+    <h2 class="section-title"><span class="num">01.</span> Qui suis-je ?</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Je suis un <strong>ingénieur en génie minier</strong> passionné par la
+          simulation, la modélisation et l'analyse de données. Mon parcours combine
+          l'expertise métier minière avec des compétences techniques en développement
+          et en intelligence artificielle.
+        </p>
+        <p>
+          Dans le cadre de mon <strong>mémoire de maîtrise</strong>, j'ai développé un
+          modèle de simulation d'opérations minières sous <strong>AnyLogic</strong> :
+          flotte de camions, pelles, bulldozers, stations carburant, modèle de pannes
+          (MTBF/TBF), tonnages par palier. Le modèle permet d'évaluer les performances
+          opérationnelles et d'optimiser la planification de la production.
+        </p>
+        <p>
+          Récemment, j'ai construit <strong>Command Center</strong> : une plateforme
+          combinant un dashboard web intelligent pour l'analyse de données multi-feuilles
+          et un agent conversationnel WhatsApp propulsé par Claude (Anthropic) pour
+          interroger les données en langage naturel.
+        </p>
+        <p>
+          Je cherche à appliquer cette double compétence — <strong>ingénierie métier
+          + technologies modernes</strong> — à des projets qui ont un impact.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>Informations</h3>
+        <div class="info-row"><span class="label">Email</span><span class="value" style="font-size:11px"><a href="mailto:abdelghafour.elmchiek@gmail.com" style="color:var(--accent);text-decoration:none">abdelghafour.elmchiek@gmail.com</a></span></div>
+        <div class="info-row"><span class="label">Localisation</span><span class="value">🌍</span></div>
+        <div class="info-row"><span class="label">Spécialité</span><span class="value">Simulation</span></div>
+        <div class="info-row"><span class="label">Diplôme</span><span class="value">Maîtrise</span></div>
+        <div class="info-row"><span class="label">Outils clés</span><span class="value">AnyLogic · Python</span></div>
+        <div class="info-row"><span class="label">Langues</span><span class="value">FR · EN · AR</span></div>
+        <div class="info-row"><span class="label">Statut</span><span class="value" style="color: var(--accent-2)">● Disponible</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <span class="section-label">Compétences</span>
+    <h2 class="section-title"><span class="num">02.</span> Ce que je maîtrise</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="icon">⚙️</span>
+        <h3>Simulation & Modélisation</h3>
+        <p>Conception de modèles d'opérations complexes, agents, événements discrets, systèmes dynamiques.</p>
+        <div class="tech-tags">
+          <span class="tag">AnyLogic</span>
+          <span class="tag">DES</span>
+          <span class="tag">Agent-based</span>
+          <span class="tag">Monte Carlo</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">📊</span>
+        <h3>Analyse de données</h3>
+        <p>Exploration, statistiques descriptives, visualisation, détection de patterns dans des jeux de données industriels.</p>
+        <div class="tech-tags">
+          <span class="tag green">Python</span>
+          <span class="tag green">Pandas</span>
+          <span class="tag green">NumPy</span>
+          <span class="tag green">Matplotlib</span>
+          <span class="tag green">Excel</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">💻</span>
+        <h3>Développement Web</h3>
+        <p>Applications web interactives, dashboards, interfaces utilisateur modernes et responsives.</p>
+        <div class="tech-tags">
+          <span class="tag orange">HTML</span>
+          <span class="tag orange">CSS</span>
+          <span class="tag orange">JavaScript</span>
+          <span class="tag orange">Chart.js</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🤖</span>
+        <h3>Intelligence Artificielle</h3>
+        <p>Intégration d'agents IA, tool use, prompt engineering pour transformer les données en insights conversationnels.</p>
+        <div class="tech-tags">
+          <span class="tag purple">Claude API</span>
+          <span class="tag purple">Anthropic SDK</span>
+          <span class="tag purple">Tool Use</span>
+          <span class="tag purple">LLM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">⚡</span>
+        <h3>Backend & APIs</h3>
+        <p>Serveurs Python, APIs REST, webhooks, intégrations tierces (messagerie, paiement, cloud).</p>
+        <div class="tech-tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">REST</span>
+          <span class="tag">Twilio</span>
+          <span class="tag">WhatsApp</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">🛠️</span>
+        <h3>Outils & DevOps</h3>
+        <p>Versionning, déploiement cloud, environnements de développement, collaboration d'équipe.</p>
+        <div class="tech-tags">
+          <span class="tag orange">Git</span>
+          <span class="tag orange">GitHub</span>
+          <span class="tag orange">Railway</span>
+          <span class="tag orange">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <span class="section-label">Projets</span>
+    <h2 class="section-title"><span class="num">03.</span> Mes réalisations</h2>
+
+    <!-- Projet 1 : Mémoire AnyLogic -->
+    <div class="project">
+      <div class="project-grid">
+        <div class="project-visual">
+          <div class="mock">
+            <div class="mock-header">
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+            </div>
+            <div class="mock-content">
+              <div class="mock-line">▸ Simulation Mining Ops</div>
+              <div class="mock-line" style="color: var(--accent-2)">✓ 282 camions actifs</div>
+              <div class="mock-line" style="color: var(--accent-3)">⚠ 42 601 pannes simulées</div>
+              <div class="mock-line">▸ TBF moyen: 205.4h</div>
+              <div class="mock-bar w-80"></div>
+              <div class="mock-bar w-60"></div>
+              <div class="mock-bar w-45"></div>
+              <div class="mock-bar w-70"></div>
+              <div class="mock-line" style="color: var(--accent)">▸ Tonnage cumulé: 182.0 Mt</div>
+              <div class="mock-line" style="color: var(--text-muted); margin-top: 8px;">// AnyLogic simulation engine</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">Mémoire de maîtrise · 2024-2025</div>
+          <h3>Simulation d'opérations minières sous AnyLogic</h3>
+          <p>
+            Développement d'un modèle de simulation multi-agents pour une exploitation minière,
+            combinant événements discrets (DES) et modélisation agent-based.
+          </p>
+          <ul>
+            <li>Flotte de 282 camions + 3 pelles + bulldozers avec positionnement spatial</li>
+            <li>Modélisation stochastique des pannes (TBF, durée d'arrêt) par équipement</li>
+            <li>Stations carburant, paliers d'excavation, calcul de tonnage dynamique</li>
+            <li>Analyse de 44 000+ événements de panne simulés sur l'horizon d'étude</li>
+            <li>Optimisation de la disponibilité et de la productivité opérationnelle</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">AnyLogic</span>
+            <span class="tag green">Java</span>
+            <span class="tag orange">Excel</span>
+            <span class="tag purple">Statistiques</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projet 2 : Command Center -->
+    <div class="project reverse">
+      <div class="project-grid">
+        <div class="project-visual">
+          <div class="mock">
+            <div class="mock-header">
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+            </div>
+            <div class="mock-content">
+              <div class="mock-line" style="color: var(--accent)">▸ COMMAND CENTER</div>
+              <div class="mock-line">Input.xlsx · 10 feuilles</div>
+              <div class="mock-bar w-80"></div>
+              <div class="mock-bar w-70"></div>
+              <div class="mock-bar w-45"></div>
+              <div class="mock-line" style="color: var(--accent-2); margin-top: 8px;">▸ WhatsApp Agent</div>
+              <div class="mock-line">You: TBF moyen?</div>
+              <div class="mock-line" style="color: var(--accent-3)">🤖 205.4h sur 42 601 pannes</div>
+              <div class="mock-line">You: Histogramme?</div>
+              <div class="mock-line" style="color: var(--accent-3)">🤖 [📊 image envoyée]</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">Projet personnel · 2026</div>
+          <h3>Command Center — Dashboard + Agent IA WhatsApp</h3>
+          <p>
+            Plateforme d'analyse de données intelligente combinant une interface web
+            adaptative et un agent conversationnel WhatsApp propulsé par Claude (Anthropic).
+          </p>
+          <ul>
+            <li>Dashboard web single-file avec détection automatique de types (numérique, date, catégorie, spatial)</li>
+            <li>Visualisations adaptatives : histogrammes, camemberts, cartes X/Y, timelines, courbes cumulées</li>
+            <li>Support multi-feuilles Excel avec schéma et insights détectés par feuille</li>
+            <li>Agent WhatsApp : Claude appelle des outils (lecture Excel, agrégations, graphiques) via tool use</li>
+            <li>Adaptive thinking + prompt caching pour optimiser coûts et performance</li>
+            <li>Génération de graphiques envoyés en image MMS directement sur WhatsApp</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag green">Python</span>
+            <span class="tag green">FastAPI</span>
+            <span class="tag purple">Claude API</span>
+            <span class="tag orange">Twilio</span>
+            <span class="tag">Chart.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title"><span class="num">04.</span> Discutons !</h2>
+    <p>
+      Une opportunité, un projet de simulation, une collaboration ?
+      Je suis ouvert aux échanges. N'hésite pas à me contacter.
+    </p>
+    <div class="mono" style="font-size:18px;color:var(--accent);margin-bottom:24px">
+      <a href="mailto:abdelghafour.elmchiek@gmail.com" style="color:inherit;text-decoration:none">abdelghafour.elmchiek@gmail.com</a>
+    </div>
+    <a href="mailto:abdelghafour.elmchiek@gmail.com" class="btn btn-primary">
+      ✉️ M'envoyer un email
+    </a>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/abdelghaffour-el-mchiek-9b5203229/" target="_blank" rel="noopener" title="LinkedIn">💼 LinkedIn</a>
+      <a href="mailto:abdelghafour.elmchiek@gmail.com" title="Email">✉️ Email</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>Conçu et développé par Abdelghaffour El Mchiek · © 2026</div>
+  </footer>
+
+<script>
+  // Smooth scroll highlight on nav
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateActiveLink() {
+    const scroll = window.scrollY + 100;
+    sections.forEach(sec => {
+      if (scroll >= sec.offsetTop && scroll < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(a => a.style.color = '');
+        const active = document.querySelector(`nav a[href="#${sec.id}"]`);
+        if (active) active.style.color = 'var(--text)';
+      }
+    });
+  }
+  window.addEventListener('scroll', updateActiveLink);
+</script>
+</body>
+</html>
