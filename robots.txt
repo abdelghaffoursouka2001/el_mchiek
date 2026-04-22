@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdelghaffoursouka2001.github.io/el_mchiek/sitemap.xml

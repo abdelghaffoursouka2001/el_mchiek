@@ -3,8 +3,98 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abdelghaffour El Mchiek — Ingénieur en génie minier</title>
-<meta name="description" content="Portfolio d'Abdelghaffour El Mchiek — Ingénieur en génie minier : mécanique des roches, simulation, analyse de données et IA appliquée." />
+<title data-i18n="meta.title">Abdelghaffour El Mchiek — Ingénieur en génie minier</title>
+<meta name="description" data-i18n-attr="content:meta.description" content="Portfolio d'Abdelghaffour El Mchiek — Ingénieur en génie minier : mécanique des roches, simulation, analyse de données et IA appliquée." />
+
+<!-- SEO -->
+<meta name="author" content="Abdelghaffour El Mchiek">
+<meta name="keywords" content="Abdelghaffour El Mchiek, El Mchiek, ingénieur génie minier, mining engineer, Polytechnique Montréal, EMI Rabat, AnyLogic, Deswik, GeoStudio, simulation minière, remblayage, Push End-Dumping, Bottom-Up, Montréal Québec, CPI, contrôle de terrain">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://abdelghaffoursouka2001.github.io/el_mchiek/">
+
+<!-- Google Search Console verification (remplace la valeur après inscription sur search.google.com/search-console) -->
+<meta name="google-site-verification" content="">
+
+<!-- Open Graph (aperçu LinkedIn / WhatsApp / Facebook) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Abdelghaffour El Mchiek — Ingénieur en génie minier">
+<meta property="og:description" content="Portfolio : mécanique des roches, simulation multi-agents AnyLogic, analyse de données et IA appliquée. Candidat à la maîtrise recherche à Polytechnique Montréal.">
+<meta property="og:image" content="https://abdelghaffoursouka2001.github.io/el_mchiek/assets/profile.jpg">
+<meta property="og:image:alt" content="Photo d'Abdelghaffour El Mchiek">
+<meta property="og:url" content="https://abdelghaffoursouka2001.github.io/el_mchiek/">
+<meta property="og:site_name" content="Abdelghaffour El Mchiek">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="profile:first_name" content="Abdelghaffour">
+<meta property="profile:last_name" content="El Mchiek">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abdelghaffour El Mchiek — Ingénieur en génie minier">
+<meta name="twitter:description" content="Portfolio : simulation minière, mécanique des roches, analyse de données et IA.">
+<meta name="twitter:image" content="https://abdelghaffoursouka2001.github.io/el_mchiek/assets/profile.jpg">
+
+<!-- Structured data : JSON-LD Person (Google Knowledge Panel) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abdelghaffour El Mchiek",
+  "givenName": "Abdelghaffour",
+  "familyName": "El Mchiek",
+  "jobTitle": "Ingénieur en génie minier",
+  "description": "Ingénieur en génie minier, candidat à la maîtrise recherche en génie minéral à Polytechnique Montréal. Expertise en mécanique des roches, simulation multi-agents, analyse de données et IA appliquée.",
+  "image": "https://abdelghaffoursouka2001.github.io/el_mchiek/assets/profile.jpg",
+  "url": "https://abdelghaffoursouka2001.github.io/el_mchiek/",
+  "email": "mailto:abdelghafour.elmchiek@gmail.com",
+  "telephone": "+1-438-470-5280",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montréal",
+    "addressRegion": "QC",
+    "addressCountry": "CA"
+  },
+  "nationality": "MA",
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Polytechnique Montréal",
+      "sameAs": "https://www.polymtl.ca/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "École Mohammadia d'Ingénieurs (EMI)",
+      "sameAs": "https://emi.um5.ac.ma/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Université Chouaib Doukkali",
+      "sameAs": "https://www.ucd.ac.ma/"
+    }
+  ],
+  "knowsLanguage": ["fr", "en", "ar"],
+  "knowsAbout": [
+    "Génie minier",
+    "Mining engineering",
+    "Mécanique des roches",
+    "Rock mechanics",
+    "AnyLogic",
+    "Simulation multi-agents",
+    "Deswik",
+    "GeoStudio",
+    "Analyse de données",
+    "Python",
+    "Java",
+    "IA appliquée",
+    "Optimisation du remblayage"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/abdelghaffour-el-mchiek/",
+    "https://github.com/abdelghaffoursouka2001"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,7 +135,6 @@
     pointer-events: none;
   }
 
-  /* Navigation */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -60,6 +149,7 @@
   }
   nav .logo { font-weight: 700; font-size: 15px; letter-spacing: 1px; }
   nav .logo span { color: var(--accent); }
+  nav .nav-right { display: flex; align-items: center; gap: 20px; }
   nav ul { display: flex; gap: 28px; list-style: none; }
   nav a {
     color: var(--text-dim);
@@ -70,7 +160,32 @@
   }
   nav a:hover { color: var(--text); }
 
-  /* Sections */
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: border-color 0.2s;
+  }
+  .lang-toggle:hover { border-color: var(--accent); }
+  .lang-opt {
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.2s;
+    padding: 2px 4px;
+  }
+  .lang-opt:hover { color: var(--text); }
+  .lang-opt.active { color: var(--accent); }
+  .lang-sep { color: var(--border-light); }
+
   section {
     max-width: 1100px;
     margin: 0 auto;
@@ -87,7 +202,6 @@
   }
   .section-label::before { content: '// '; color: var(--text-muted); }
 
-  /* Hero */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -132,7 +246,6 @@
   }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-  /* Profile photo */
   .profile-wrap {
     display: flex;
     justify-content: center;
@@ -242,7 +355,6 @@
     font-weight: 400;
   }
 
-  /* About */
   .about-grid {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -282,7 +394,6 @@
   }
   .info-row .value a { color: var(--accent); text-decoration: none; }
 
-  /* Skills */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -313,7 +424,6 @@
   .tag.orange { background: rgba(245, 158, 11, 0.1); color: #fcd34d; border-color: rgba(245, 158, 11, 0.2); }
   .tag.purple { background: rgba(139, 92, 246, 0.1); color: #d8b4fe; border-color: rgba(139, 92, 246, 0.2); }
 
-  /* Projects */
   .project {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -414,6 +524,7 @@
     font-size: 15px;
     margin-bottom: 16px;
   }
+  .project-content p strong { color: var(--text); font-weight: 500; }
   .project-content ul { list-style: none; margin-bottom: 20px; }
   .project-content ul li {
     color: var(--text-dim);
@@ -429,7 +540,6 @@
     color: var(--accent);
   }
 
-  /* Experience timeline */
   .timeline {
     position: relative;
     padding-left: 30px;
@@ -499,7 +609,6 @@
     color: var(--accent);
   }
 
-  /* Formation */
   .formation-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -523,7 +632,6 @@
   .formation-card h3 { font-size: 16px; margin-bottom: 6px; font-weight: 600; line-height: 1.3; }
   .formation-card .school { color: var(--text-dim); font-size: 14px; font-style: italic; }
 
-  /* Contact form */
   .contact-wrapper {
     max-width: 720px;
     margin: 0 auto;
@@ -627,6 +735,7 @@
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     nav ul { gap: 16px; font-size: 13px; }
+    nav .nav-right { gap: 12px; }
     section { padding: 80px 20px 40px; }
     .about-grid, .project-grid { grid-template-columns: 1fr; }
     .project.reverse .project-grid { direction: ltr; }
@@ -644,30 +753,37 @@
 <body>
   <nav>
     <div class="logo">AEM<span>.</span></div>
-    <ul>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#skills">Compétences</a></li>
-      <li><a href="#projects">Projets</a></li>
-      <li><a href="#experience">Expérience</a></li>
-      <li><a href="#formation">Formation</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
+        <li><a href="#formation" data-i18n="nav.formation">Formation</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <span class="lang-opt active" data-lang="fr">FR</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-opt" data-lang="en">EN</span>
+      </div>
+    </div>
   </nav>
 
   <section class="hero">
     <div class="hero-text">
-      <div class="greeting">{ Bonjour, je suis }</div>
+      <div class="greeting" data-i18n="hero.greeting">{ Bonjour, je suis }</div>
       <h1><span class="gradient">Abdelghaffour</span><br/>El Mchiek.</h1>
-      <h2>Ingénieur en génie minier.<br/>Simulation, modélisation, données.</h2>
-      <p>
+      <h2 data-i18n-html="hero.subtitle">Ingénieur en génie minier.<br/>Simulation, modélisation, données.</h2>
+      <p data-i18n="hero.description">
         Candidat à la maîtrise recherche en génie minéral à Polytechnique Montréal.
         Je conçois des modèles de simulation, j'analyse les opérations minières et
         je développe des outils d'aide à la décision — de la mécanique des roches
         à l'analyse de données et à l'IA appliquée.
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
-        <a href="#contact" class="btn btn-outline">Me contacter</a>
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">Voir mes projets →</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero.cta_contact">Me contacter</a>
       </div>
     </div>
     <div class="profile-wrap">
@@ -675,74 +791,74 @@
         <img src="assets/profile.jpg" alt="Abdelghaffour El Mchiek" class="profile-img"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
         <div class="profile-fallback" style="display:none;">AEM</div>
-        <div class="status-dot" title="Disponible"></div>
+        <div class="status-dot" data-i18n-attr="title:hero.status" title="Disponible"></div>
       </div>
     </div>
   </section>
 
   <section id="about">
-    <span class="section-label">À propos</span>
-    <h2 class="section-title"><span class="num">01.</span> Qui suis-je ?</h2>
+    <span class="section-label" data-i18n="about.label">À propos</span>
+    <h2 class="section-title"><span class="num">01.</span> <span data-i18n="about.title">Qui suis-je ?</span></h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>
+        <p data-i18n-html="about.p1">
           Je suis un <strong>ingénieur en génie minier</strong>, actuellement candidat à la
           maîtrise recherche en génie minéral à <strong>Polytechnique Montréal</strong>
           (diplomation prévue mai 2026). Je suis également titulaire d'une formation
           d'ingénieur d'État en génie minéral de l'<strong>École Mohammadia d'Ingénieurs
           (EMI), Rabat</strong>.
         </p>
-        <p>
+        <p data-i18n-html="about.p2">
           Mon projet de recherche porte sur l'<strong>optimisation des séquences de
           remblayage d'une mine à ciel ouvert</strong> : j'ai comparé les méthodes
           Push/End-Dumping et Bottom-Up, identifié la profondeur critique de bascule
           Hcrit ≈ 195–219 m, et produit des abaques de coûts unitaires exploitables
           en planification.
         </p>
-        <p>
+        <p data-i18n-html="about.p3">
           Mes compétences couvrent la <strong>mécanique des roches</strong> (GeoStudio),
           les <strong>logiciels miniers</strong> (Deswik, AutoCAD), la <strong>simulation
           multi-agents</strong> (AnyLogic/Java) et l'<strong>analyse de données</strong>
           (Python, Excel avancé, MiniZinc). J'ai également développé <em>Command Center</em>,
           une plateforme d'analyse de données avec agent IA conversationnel.
         </p>
-        <p>
+        <p data-i18n-html="about.p4">
           Je cherche à appliquer cette <strong>double compétence ingénierie minière +
           outils numériques</strong> à des projets à fort impact terrain.
         </p>
       </div>
       <div class="about-card">
-        <h3>Informations</h3>
-        <div class="info-row"><span class="label">Localisation</span><span class="value">Montréal, QC 🇨🇦</span></div>
-        <div class="info-row"><span class="label">Téléphone</span><span class="value">438-470-5280</span></div>
-        <div class="info-row"><span class="label">Email</span><span class="value" style="font-size:11px"><a href="mailto:abdelghafour.elmchiek@gmail.com">abdelghafour.elmchiek@gmail.com</a></span></div>
-        <div class="info-row"><span class="label">Formation</span><span class="value">M.Sc.A. Polytechnique</span></div>
-        <div class="info-row"><span class="label">Mobilité</span><span class="value">FIFO · 4/3</span></div>
-        <div class="info-row"><span class="label">Langues</span><span class="value">FR · EN · AR</span></div>
-        <div class="info-row"><span class="label">Permis</span><span class="value">Travail CA valide</span></div>
-        <div class="info-row"><span class="label">Statut</span><span class="value" style="color: var(--accent-2)">● Disponible</span></div>
+        <h3 data-i18n="about.info_title">Informations</h3>
+        <div class="info-row"><span class="label" data-i18n="about.location">Localisation</span><span class="value" data-i18n="about.location_val">Montréal, QC 🇨🇦</span></div>
+        <div class="info-row"><span class="label" data-i18n="about.phone">Téléphone</span><span class="value">438-470-5280</span></div>
+        <div class="info-row"><span class="label" data-i18n="about.email">Email</span><span class="value" style="font-size:11px"><a href="mailto:abdelghafour.elmchiek@gmail.com">abdelghafour.elmchiek@gmail.com</a></span></div>
+        <div class="info-row"><span class="label" data-i18n="about.education">Formation</span><span class="value">M.Sc.A. Polytechnique</span></div>
+        <div class="info-row"><span class="label" data-i18n="about.mobility">Mobilité</span><span class="value">FIFO · 4/3</span></div>
+        <div class="info-row"><span class="label" data-i18n="about.languages">Langues</span><span class="value">FR · EN · AR</span></div>
+        <div class="info-row"><span class="label" data-i18n="about.permit">Permis</span><span class="value" data-i18n="about.permit_val">Travail CA valide</span></div>
+        <div class="info-row"><span class="label" data-i18n="about.status">Statut</span><span class="value" data-i18n="about.status_val" style="color: var(--accent-2)">● Disponible</span></div>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <span class="section-label">Compétences</span>
-    <h2 class="section-title"><span class="num">02.</span> Ce que je maîtrise</h2>
+    <span class="section-label" data-i18n="skills.label">Compétences</span>
+    <h2 class="section-title"><span class="num">02.</span> <span data-i18n="skills.title">Ce que je maîtrise</span></h2>
     <div class="skills-grid">
       <div class="skill-card">
         <span class="icon">⛰️</span>
-        <h3>Mécanique des roches</h3>
-        <p>Stabilité de pente, analyses contraintes-déformations, notions de surveillance du massif rocheux et de sismicité induite.</p>
+        <h3 data-i18n="skills.s1_title">Mécanique des roches</h3>
+        <p data-i18n="skills.s1_desc">Stabilité de pente, analyses contraintes-déformations, notions de surveillance du massif rocheux et de sismicité induite.</p>
         <div class="tech-tags">
           <span class="tag">GeoStudio</span>
-          <span class="tag">Stabilité</span>
-          <span class="tag">Soutènement</span>
+          <span class="tag" data-i18n="skills.s1_t2">Stabilité</span>
+          <span class="tag" data-i18n="skills.s1_t3">Soutènement</span>
         </div>
       </div>
       <div class="skill-card">
         <span class="icon">⚙️</span>
-        <h3>Logiciels miniers & ingénierie</h3>
-        <p>Conception de séquences d'exploitation, plans miniers, modélisation de fosses et projets académiques.</p>
+        <h3 data-i18n="skills.s2_title">Logiciels miniers & ingénierie</h3>
+        <p data-i18n="skills.s2_desc">Conception de séquences d'exploitation, plans miniers, modélisation de fosses et projets académiques.</p>
         <div class="tech-tags">
           <span class="tag green">Deswik</span>
           <span class="tag green">AutoCAD</span>
@@ -751,31 +867,31 @@
       </div>
       <div class="skill-card">
         <span class="icon">💥</span>
-        <h3>Forage, sautage & opérations</h3>
-        <p>Paramètres de forage et sautage, analyse de cycles camion-pelle, dimensionnement de flottes, méthodes de remblayage et gestion des stériles.</p>
+        <h3 data-i18n="skills.s3_title">Forage, sautage & opérations</h3>
+        <p data-i18n="skills.s3_desc">Paramètres de forage et sautage, analyse de cycles camion-pelle, dimensionnement de flottes, méthodes de remblayage et gestion des stériles.</p>
         <div class="tech-tags">
-          <span class="tag orange">Forage</span>
-          <span class="tag orange">Sautage</span>
-          <span class="tag orange">Remblayage</span>
-          <span class="tag orange">Flottes</span>
+          <span class="tag orange" data-i18n="skills.s3_t1">Forage</span>
+          <span class="tag orange" data-i18n="skills.s3_t2">Sautage</span>
+          <span class="tag orange" data-i18n="skills.s3_t3">Remblayage</span>
+          <span class="tag orange" data-i18n="skills.s3_t4">Flottes</span>
         </div>
       </div>
       <div class="skill-card">
         <span class="icon">📊</span>
-        <h3>Analyse de données</h3>
-        <p>Exploration statistique, tableaux croisés, analyse de scénarios, visualisation et programmation par contraintes.</p>
+        <h3 data-i18n="skills.s4_title">Analyse de données</h3>
+        <p data-i18n="skills.s4_desc">Exploration statistique, tableaux croisés, analyse de scénarios, visualisation et programmation par contraintes.</p>
         <div class="tech-tags">
           <span class="tag">Python</span>
           <span class="tag">Pandas</span>
           <span class="tag">Matplotlib</span>
-          <span class="tag">Excel avancé</span>
+          <span class="tag" data-i18n="skills.s4_t4">Excel avancé</span>
           <span class="tag">MiniZinc</span>
         </div>
       </div>
       <div class="skill-card">
         <span class="icon">🤖</span>
-        <h3>Développement & IA</h3>
-        <p>Applications web, intégration d'agents IA et tool use pour transformer les données d'exploitation en décisions.</p>
+        <h3 data-i18n="skills.s5_title">Développement & IA</h3>
+        <p data-i18n="skills.s5_desc">Applications web, intégration d'agents IA et tool use pour transformer les données d'exploitation en décisions.</p>
         <div class="tech-tags">
           <span class="tag purple">JavaScript</span>
           <span class="tag purple">Java</span>
@@ -785,22 +901,21 @@
       </div>
       <div class="skill-card">
         <span class="icon">🗣️</span>
-        <h3>Langues & communication</h3>
-        <p>Rédaction de rapports techniques, présentations, travail en environnement international et multiculturel.</p>
+        <h3 data-i18n="skills.s6_title">Langues & communication</h3>
+        <p data-i18n="skills.s6_desc">Rédaction de rapports techniques, présentations, travail en environnement international et multiculturel.</p>
         <div class="tech-tags">
-          <span class="tag green">Arabe (natif)</span>
-          <span class="tag green">Français (C1)</span>
-          <span class="tag green">Anglais (pro)</span>
+          <span class="tag green" data-i18n="skills.s6_t1">Arabe (natif)</span>
+          <span class="tag green" data-i18n="skills.s6_t2">Français (C1)</span>
+          <span class="tag green" data-i18n="skills.s6_t3">Anglais (pro)</span>
         </div>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <span class="section-label">Projets</span>
-    <h2 class="section-title"><span class="num">03.</span> Mes réalisations</h2>
+    <span class="section-label" data-i18n="projects.label">Projets</span>
+    <h2 class="section-title"><span class="num">03.</span> <span data-i18n="projects.title">Mes réalisations</span></h2>
 
-    <!-- Projet 1 : Mémoire de maîtrise — Remblayage -->
     <div class="project">
       <div class="project-grid">
         <div class="project-visual">
@@ -812,12 +927,12 @@
             </div>
             <div class="mock-content">
               <div class="mock-line" style="color: var(--accent)">▸ REMBLAYAGE — Push vs Bottom-Up</div>
-              <div class="mock-line">Profondeur: 150 → 600 m</div>
-              <div class="mock-line">Distance halde-fosse: 1 → 6 km</div>
+              <div class="mock-line" data-i18n="projects.p1_mock1">Profondeur: 150 → 600 m</div>
+              <div class="mock-line" data-i18n="projects.p1_mock2">Distance halde-fosse: 1 → 6 km</div>
               <div class="mock-bar w-80"></div>
               <div class="mock-bar w-60"></div>
               <div class="mock-line" style="color: var(--accent-2); margin-top: 6px;">✓ Hcrit ≈ 195 à 219 m</div>
-              <div class="mock-line" style="color: var(--accent-3)">⚙ Flotte: 11 à 39 camions</div>
+              <div class="mock-line" style="color: var(--accent-3)" data-i18n="projects.p1_mock3">⚙ Flotte: 11 à 39 camions</div>
               <div class="mock-bar w-45"></div>
               <div class="mock-bar w-70"></div>
               <div class="mock-line" style="color: var(--text-muted); margin-top: 6px;">// Abaques CAD/t</div>
@@ -825,31 +940,30 @@
           </div>
         </div>
         <div class="project-content">
-          <div class="project-meta">Mémoire de maîtrise · 2023–2026</div>
-          <h3>Optimisation des séquences de remblayage d'une mine à ciel ouvert</h3>
-          <p>
+          <div class="project-meta" data-i18n="projects.p1_meta">Mémoire de maîtrise · 2023–2026</div>
+          <h3 data-i18n="projects.p1_title">Optimisation des séquences de remblayage d'une mine à ciel ouvert</h3>
+          <p data-i18n-html="projects.p1_desc">
             Comparaison des méthodes <strong>Push/End-Dumping</strong> et <strong>Bottom-Up</strong>
             pour le remblayage simultané à l'extraction, avec identification de la profondeur
             critique de bascule.
           </p>
           <ul>
-            <li>Modélisation des séquences extraction + remblayage simultanées sur fosse à ciel ouvert</li>
-            <li>Variation de la profondeur (150 à 600 m) et de la distance halde-fosse (1 à 6 km)</li>
-            <li>Identification de la profondeur critique Hcrit ≈ 195 à 219 m selon la configuration de flotte</li>
-            <li>Dimensionnement de flotte requis (11 à 39 camions) et abaques de coûts unitaires (CAD/t)</li>
-            <li>Recommandations opérationnelles et analyse des enjeux de stabilité et de gestion des stériles</li>
+            <li data-i18n="projects.p1_li1">Modélisation des séquences extraction + remblayage simultanées sur fosse à ciel ouvert</li>
+            <li data-i18n="projects.p1_li2">Variation de la profondeur (150 à 600 m) et de la distance halde-fosse (1 à 6 km)</li>
+            <li data-i18n="projects.p1_li3">Identification de la profondeur critique Hcrit ≈ 195 à 219 m selon la configuration de flotte</li>
+            <li data-i18n="projects.p1_li4">Dimensionnement de flotte requis (11 à 39 camions) et abaques de coûts unitaires (CAD/t)</li>
+            <li data-i18n="projects.p1_li5">Recommandations opérationnelles et analyse des enjeux de stabilité et de gestion des stériles</li>
           </ul>
           <div class="tech-tags">
             <span class="tag">Deswik</span>
             <span class="tag green">Python</span>
-            <span class="tag orange">Excel avancé</span>
+            <span class="tag orange" data-i18n="projects.p1_tag">Excel avancé</span>
             <span class="tag purple">MiniZinc</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Projet 2 : Simulation AnyLogic -->
     <div class="project reverse">
       <div class="project-grid">
         <div class="project-visual">
@@ -861,44 +975,43 @@
             </div>
             <div class="mock-content">
               <div class="mock-line">▸ Simulation Mining Ops</div>
-              <div class="mock-line" style="color: var(--accent-2)">✓ 282 camions actifs</div>
-              <div class="mock-line" style="color: var(--accent-3)">⚠ 42 601 pannes simulées</div>
-              <div class="mock-line">▸ TBF moyen: 205.4h</div>
+              <div class="mock-line" style="color: var(--accent-2)" data-i18n="projects.p2_mock1">✓ 282 camions actifs</div>
+              <div class="mock-line" style="color: var(--accent-3)" data-i18n="projects.p2_mock2">⚠ 42 601 pannes simulées</div>
+              <div class="mock-line" data-i18n="projects.p2_mock3">▸ TBF moyen: 205.4h</div>
               <div class="mock-bar w-80"></div>
               <div class="mock-bar w-60"></div>
               <div class="mock-bar w-45"></div>
               <div class="mock-bar w-70"></div>
-              <div class="mock-line" style="color: var(--accent)">▸ Tonnage cumulé: 182.0 Mt</div>
+              <div class="mock-line" style="color: var(--accent)" data-i18n="projects.p2_mock4">▸ Tonnage cumulé: 182.0 Mt</div>
               <div class="mock-line" style="color: var(--text-muted); margin-top: 8px;">// AnyLogic simulation engine</div>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <div class="project-meta">Projet de simulation · Java / AnyLogic</div>
-          <h3>Simulation multi-agents d'opérations minières sous AnyLogic</h3>
-          <p>
+          <div class="project-meta" data-i18n="projects.p2_meta">Projet de simulation · Java / AnyLogic</div>
+          <h3 data-i18n="projects.p2_title">Simulation multi-agents d'opérations minières sous AnyLogic</h3>
+          <p data-i18n="projects.p2_desc">
             Modèle de simulation multi-agents d'une exploitation minière combinant
             événements discrets (DES) et agent-based pour évaluer la performance
             opérationnelle.
           </p>
           <ul>
-            <li>Flotte de 282 camions + 3 pelles + bulldozers avec positionnement spatial</li>
-            <li>Modélisation stochastique des pannes (TBF, durée d'arrêt) par équipement</li>
-            <li>Stations carburant, paliers d'excavation, calcul de tonnage dynamique</li>
-            <li>Analyse de 44 000+ événements de panne simulés sur l'horizon d'étude</li>
-            <li>Optimisation de la disponibilité et de la productivité opérationnelle</li>
+            <li data-i18n="projects.p2_li1">Flotte de 282 camions + 3 pelles + bulldozers avec positionnement spatial</li>
+            <li data-i18n="projects.p2_li2">Modélisation stochastique des pannes (TBF, durée d'arrêt) par équipement</li>
+            <li data-i18n="projects.p2_li3">Stations carburant, paliers d'excavation, calcul de tonnage dynamique</li>
+            <li data-i18n="projects.p2_li4">Analyse de 44 000+ événements de panne simulés sur l'horizon d'étude</li>
+            <li data-i18n="projects.p2_li5">Optimisation de la disponibilité et de la productivité opérationnelle</li>
           </ul>
           <div class="tech-tags">
             <span class="tag">AnyLogic</span>
             <span class="tag green">Java</span>
             <span class="tag orange">Excel</span>
-            <span class="tag purple">Statistiques</span>
+            <span class="tag purple" data-i18n="projects.p2_tag">Statistiques</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Projet 3 : Command Center -->
     <div class="project">
       <div class="project-grid">
         <div class="project-visual">
@@ -910,31 +1023,31 @@
             </div>
             <div class="mock-content">
               <div class="mock-line" style="color: var(--accent)">▸ COMMAND CENTER</div>
-              <div class="mock-line">Input.xlsx · 10 feuilles</div>
+              <div class="mock-line" data-i18n="projects.p3_mock1">Input.xlsx · 10 feuilles</div>
               <div class="mock-bar w-80"></div>
               <div class="mock-bar w-70"></div>
               <div class="mock-bar w-45"></div>
               <div class="mock-line" style="color: var(--accent-2); margin-top: 8px;">▸ WhatsApp Agent</div>
-              <div class="mock-line">You: TBF moyen?</div>
-              <div class="mock-line" style="color: var(--accent-3)">🤖 205.4h sur 42 601 pannes</div>
-              <div class="mock-line">You: Histogramme?</div>
-              <div class="mock-line" style="color: var(--accent-3)">🤖 [📊 image envoyée]</div>
+              <div class="mock-line" data-i18n="projects.p3_mock2">You: TBF moyen?</div>
+              <div class="mock-line" style="color: var(--accent-3)" data-i18n="projects.p3_mock3">🤖 205.4h sur 42 601 pannes</div>
+              <div class="mock-line" data-i18n="projects.p3_mock4">You: Histogramme?</div>
+              <div class="mock-line" style="color: var(--accent-3)" data-i18n="projects.p3_mock5">🤖 [📊 image envoyée]</div>
             </div>
           </div>
         </div>
         <div class="project-content">
-          <div class="project-meta">Projet personnel · 2026</div>
-          <h3>Command Center — Dashboard + Agent IA WhatsApp</h3>
-          <p>
+          <div class="project-meta" data-i18n="projects.p3_meta">Projet personnel · 2026</div>
+          <h3 data-i18n="projects.p3_title">Command Center — Dashboard + Agent IA WhatsApp</h3>
+          <p data-i18n="projects.p3_desc">
             Plateforme d'analyse de données intelligente combinant un dashboard web
             adaptatif et un agent conversationnel WhatsApp propulsé par Claude (Anthropic).
           </p>
           <ul>
-            <li>Dashboard web single-file avec détection automatique de types (numérique, date, catégorie, spatial)</li>
-            <li>Visualisations adaptatives : histogrammes, camemberts, cartes X/Y, timelines, courbes cumulées</li>
-            <li>Support multi-feuilles Excel avec schéma et insights détectés par feuille</li>
-            <li>Agent WhatsApp : Claude appelle des outils (lecture Excel, agrégations, graphiques) via tool use</li>
-            <li>Génération de graphiques envoyés en image MMS directement sur WhatsApp</li>
+            <li data-i18n="projects.p3_li1">Dashboard web single-file avec détection automatique de types (numérique, date, catégorie, spatial)</li>
+            <li data-i18n="projects.p3_li2">Visualisations adaptatives : histogrammes, camemberts, cartes X/Y, timelines, courbes cumulées</li>
+            <li data-i18n="projects.p3_li3">Support multi-feuilles Excel avec schéma et insights détectés par feuille</li>
+            <li data-i18n="projects.p3_li4">Agent WhatsApp : Claude appelle des outils (lecture Excel, agrégations, graphiques) via tool use</li>
+            <li data-i18n="projects.p3_li5">Génération de graphiques envoyés en image MMS directement sur WhatsApp</li>
           </ul>
           <div class="tech-tags">
             <span class="tag">JavaScript</span>
@@ -949,59 +1062,59 @@
   </section>
 
   <section id="experience">
-    <span class="section-label">Expérience</span>
-    <h2 class="section-title"><span class="num">04.</span> Parcours professionnel</h2>
+    <span class="section-label" data-i18n="exp.label">Expérience</span>
+    <h2 class="section-title"><span class="num">04.</span> <span data-i18n="exp.title">Parcours professionnel</span></h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="date">Juillet – Août 2023</div>
-        <h3>Stagiaire — Suivi des opérations minières</h3>
-        <div class="org">Groupe Managem · site d'Amekssa (Bleida), Maroc</div>
+        <div class="date" data-i18n="exp.e1_date">Juillet – Août 2023</div>
+        <h3 data-i18n="exp.e1_title">Stagiaire — Suivi des opérations minières</h3>
+        <div class="org" data-i18n="exp.e1_org">Groupe Managem · site d'Amekssa (Bleida), Maroc</div>
         <ul>
-          <li>Analyse de la production de cuivre (8 500 à 9 000 t/jour) et des cycles d'une flotte de 2 pelles et 6 à 8 camions</li>
-          <li>Analyse fine des temps de cycle (18 à 25 min/rotation) : chargement 3–4 min, transport 8–12 min, attente et manœuvres</li>
-          <li>Identification des principaux facteurs d'efficacité opérationnelle et des causes de pertes de productivité sur le cycle camion-pelle</li>
+          <li data-i18n="exp.e1_li1">Analyse de la production de cuivre (8 500 à 9 000 t/jour) et des cycles d'une flotte de 2 pelles et 6 à 8 camions</li>
+          <li data-i18n="exp.e1_li2">Analyse fine des temps de cycle (18 à 25 min/rotation) : chargement 3–4 min, transport 8–12 min, attente et manœuvres</li>
+          <li data-i18n="exp.e1_li3">Identification des principaux facteurs d'efficacité opérationnelle et des causes de pertes de productivité sur le cycle camion-pelle</li>
         </ul>
       </div>
       <div class="timeline-item">
-        <div class="date">Juillet – Août 2022</div>
-        <h3>Stagiaire junior — Logistique minière</h3>
-        <div class="org">Groupe OCP · El Jadida, Maroc</div>
+        <div class="date" data-i18n="exp.e2_date">Juillet – Août 2022</div>
+        <h3 data-i18n="exp.e2_title">Stagiaire junior — Logistique minière</h3>
+        <div class="org" data-i18n="exp.e2_org">Groupe OCP · El Jadida, Maroc</div>
         <ul>
-          <li>Étude de la chaîne logistique du phosphate entre Khouribga et Jorf Lasfar (187 km)</li>
-          <li>Analyse du pipeline de pulpe d'une capacité d'environ 38 Mt/an</li>
-          <li>Comparaison des modes de transport pipeline et ferroviaire (capacité, coûts, efficacité énergétique)</li>
+          <li data-i18n="exp.e2_li1">Étude de la chaîne logistique du phosphate entre Khouribga et Jorf Lasfar (187 km)</li>
+          <li data-i18n="exp.e2_li2">Analyse du pipeline de pulpe d'une capacité d'environ 38 Mt/an</li>
+          <li data-i18n="exp.e2_li3">Comparaison des modes de transport pipeline et ferroviaire (capacité, coûts, efficacité énergétique)</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="formation">
-    <span class="section-label">Formation</span>
-    <h2 class="section-title"><span class="num">05.</span> Études</h2>
+    <span class="section-label" data-i18n="form.label">Formation</span>
+    <h2 class="section-title"><span class="num">05.</span> <span data-i18n="form.title">Études</span></h2>
     <div class="formation-grid">
       <div class="formation-card">
         <div class="year">2023 — 2026</div>
-        <h3>Maîtrise recherche (M.Sc.A.) en génie minéral</h3>
-        <div class="school">Polytechnique Montréal, Canada<br/>Diplomation prévue : mai 2026</div>
+        <h3 data-i18n="form.f1_title">Maîtrise recherche (M.Sc.A.) en génie minéral</h3>
+        <div class="school" data-i18n-html="form.f1_school">Polytechnique Montréal, Canada<br/>Diplomation prévue : mai 2026</div>
       </div>
       <div class="formation-card">
         <div class="year">2021 — 2026</div>
-        <h3>Diplôme d'ingénieur d'État en génie minéral</h3>
-        <div class="school">École Mohammadia d'Ingénieurs (EMI)<br/>Rabat, Maroc</div>
+        <h3 data-i18n="form.f2_title">Diplôme d'ingénieur d'État en génie minéral</h3>
+        <div class="school" data-i18n-html="form.f2_school">École Mohammadia d'Ingénieurs (EMI)<br/>Rabat, Maroc</div>
       </div>
       <div class="formation-card">
         <div class="year">2019 — 2021</div>
-        <h3>DEUG en sciences</h3>
-        <div class="school">Université Chouaib Doukkali<br/>El Jadida, Maroc</div>
+        <h3 data-i18n="form.f3_title">DEUG en sciences</h3>
+        <div class="school" data-i18n-html="form.f3_school">Université Chouaib Doukkali<br/>El Jadida, Maroc</div>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <span class="section-label">Contact</span>
-    <h2 class="section-title"><span class="num">06.</span> Discutons !</h2>
+    <span class="section-label" data-i18n="contact.label">Contact</span>
+    <h2 class="section-title"><span class="num">06.</span> <span data-i18n="contact.title">Discutons !</span></h2>
     <div class="contact-intro">
-      <p>
+      <p data-i18n="contact.intro">
         Une opportunité, un projet, une collaboration ? Remplissez le formulaire
         ci-dessous — je réponds généralement sous 24 h.
       </p>
@@ -1018,24 +1131,24 @@
 
         <div class="form-grid">
           <div class="form-field">
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="Prénom" required placeholder="Votre prénom">
+            <label for="prenom" data-i18n="contact.f_prenom">Prénom</label>
+            <input type="text" id="prenom" name="Prénom" required data-i18n-attr="placeholder:contact.ph_prenom" placeholder="Votre prénom">
           </div>
           <div class="form-field">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="Nom" required placeholder="Votre nom">
+            <label for="nom" data-i18n="contact.f_nom">Nom</label>
+            <input type="text" id="nom" name="Nom" required data-i18n-attr="placeholder:contact.ph_nom" placeholder="Votre nom">
           </div>
           <div class="form-field full">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required placeholder="vous@exemple.com">
+            <label for="email" data-i18n="contact.f_email">Email</label>
+            <input type="email" id="email" name="Email" required data-i18n-attr="placeholder:contact.ph_email" placeholder="vous@exemple.com">
           </div>
           <div class="form-field full">
-            <label for="message">Message</label>
-            <textarea id="message" name="Message" required placeholder="Votre message..."></textarea>
+            <label for="message" data-i18n="contact.f_message">Message</label>
+            <textarea id="message" name="Message" required data-i18n-attr="placeholder:contact.ph_message" placeholder="Votre message..."></textarea>
           </div>
         </div>
         <div class="form-submit">
-          <button type="submit" class="btn btn-primary">✉️ Envoyer le message</button>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit">✉️ Envoyer le message</button>
         </div>
       </form>
     </div>
@@ -1047,13 +1160,351 @@
   </section>
 
   <footer>
-    <div>Conçu et développé par Abdelghaffour El Mchiek · © 2026 · Montréal, QC</div>
+    <div data-i18n="footer.text">Conçu et développé par Abdelghaffour El Mchiek · © 2026 · Montréal, QC</div>
   </footer>
 
 <script>
+  const translations = {
+    fr: {
+      'meta.title': "Abdelghaffour El Mchiek — Ingénieur en génie minier",
+      'meta.description': "Portfolio d'Abdelghaffour El Mchiek — Ingénieur en génie minier : mécanique des roches, simulation, analyse de données et IA appliquée.",
+
+      'nav.about': 'À propos',
+      'nav.skills': 'Compétences',
+      'nav.projects': 'Projets',
+      'nav.experience': 'Expérience',
+      'nav.formation': 'Formation',
+      'nav.contact': 'Contact',
+
+      'hero.greeting': '{ Bonjour, je suis }',
+      'hero.subtitle': 'Ingénieur en génie minier.<br/>Simulation, modélisation, données.',
+      'hero.description': "Candidat à la maîtrise recherche en génie minéral à Polytechnique Montréal. Je conçois des modèles de simulation, j'analyse les opérations minières et je développe des outils d'aide à la décision — de la mécanique des roches à l'analyse de données et à l'IA appliquée.",
+      'hero.cta_projects': 'Voir mes projets →',
+      'hero.cta_contact': 'Me contacter',
+      'hero.status': 'Disponible',
+
+      'about.label': 'À propos',
+      'about.title': 'Qui suis-je ?',
+      'about.p1': "Je suis un <strong>ingénieur en génie minier</strong>, actuellement candidat à la maîtrise recherche en génie minéral à <strong>Polytechnique Montréal</strong> (diplomation prévue mai 2026). Je suis également titulaire d'une formation d'ingénieur d'État en génie minéral de l'<strong>École Mohammadia d'Ingénieurs (EMI), Rabat</strong>.",
+      'about.p2': "Mon projet de recherche porte sur l'<strong>optimisation des séquences de remblayage d'une mine à ciel ouvert</strong> : j'ai comparé les méthodes Push/End-Dumping et Bottom-Up, identifié la profondeur critique de bascule Hcrit ≈ 195–219 m, et produit des abaques de coûts unitaires exploitables en planification.",
+      'about.p3': "Mes compétences couvrent la <strong>mécanique des roches</strong> (GeoStudio), les <strong>logiciels miniers</strong> (Deswik, AutoCAD), la <strong>simulation multi-agents</strong> (AnyLogic/Java) et l'<strong>analyse de données</strong> (Python, Excel avancé, MiniZinc). J'ai également développé <em>Command Center</em>, une plateforme d'analyse de données avec agent IA conversationnel.",
+      'about.p4': "Je cherche à appliquer cette <strong>double compétence ingénierie minière + outils numériques</strong> à des projets à fort impact terrain.",
+      'about.info_title': 'Informations',
+      'about.location': 'Localisation',
+      'about.location_val': 'Montréal, QC 🇨🇦',
+      'about.phone': 'Téléphone',
+      'about.email': 'Email',
+      'about.education': 'Formation',
+      'about.mobility': 'Mobilité',
+      'about.languages': 'Langues',
+      'about.permit': 'Permis',
+      'about.permit_val': 'Travail CA valide',
+      'about.status': 'Statut',
+      'about.status_val': '● Disponible',
+
+      'skills.label': 'Compétences',
+      'skills.title': 'Ce que je maîtrise',
+      'skills.s1_title': 'Mécanique des roches',
+      'skills.s1_desc': "Stabilité de pente, analyses contraintes-déformations, notions de surveillance du massif rocheux et de sismicité induite.",
+      'skills.s1_t2': 'Stabilité',
+      'skills.s1_t3': 'Soutènement',
+      'skills.s2_title': 'Logiciels miniers & ingénierie',
+      'skills.s2_desc': "Conception de séquences d'exploitation, plans miniers, modélisation de fosses et projets académiques.",
+      'skills.s3_title': 'Forage, sautage & opérations',
+      'skills.s3_desc': "Paramètres de forage et sautage, analyse de cycles camion-pelle, dimensionnement de flottes, méthodes de remblayage et gestion des stériles.",
+      'skills.s3_t1': 'Forage',
+      'skills.s3_t2': 'Sautage',
+      'skills.s3_t3': 'Remblayage',
+      'skills.s3_t4': 'Flottes',
+      'skills.s4_title': 'Analyse de données',
+      'skills.s4_desc': "Exploration statistique, tableaux croisés, analyse de scénarios, visualisation et programmation par contraintes.",
+      'skills.s4_t4': 'Excel avancé',
+      'skills.s5_title': 'Développement & IA',
+      'skills.s5_desc': "Applications web, intégration d'agents IA et tool use pour transformer les données d'exploitation en décisions.",
+      'skills.s6_title': 'Langues & communication',
+      'skills.s6_desc': "Rédaction de rapports techniques, présentations, travail en environnement international et multiculturel.",
+      'skills.s6_t1': 'Arabe (natif)',
+      'skills.s6_t2': 'Français (C1)',
+      'skills.s6_t3': 'Anglais (pro)',
+
+      'projects.label': 'Projets',
+      'projects.title': 'Mes réalisations',
+      'projects.p1_meta': 'Mémoire de maîtrise · 2023–2026',
+      'projects.p1_title': "Optimisation des séquences de remblayage d'une mine à ciel ouvert",
+      'projects.p1_desc': "Comparaison des méthodes <strong>Push/End-Dumping</strong> et <strong>Bottom-Up</strong> pour le remblayage simultané à l'extraction, avec identification de la profondeur critique de bascule.",
+      'projects.p1_li1': "Modélisation des séquences extraction + remblayage simultanées sur fosse à ciel ouvert",
+      'projects.p1_li2': "Variation de la profondeur (150 à 600 m) et de la distance halde-fosse (1 à 6 km)",
+      'projects.p1_li3': "Identification de la profondeur critique Hcrit ≈ 195 à 219 m selon la configuration de flotte",
+      'projects.p1_li4': "Dimensionnement de flotte requis (11 à 39 camions) et abaques de coûts unitaires (CAD/t)",
+      'projects.p1_li5': "Recommandations opérationnelles et analyse des enjeux de stabilité et de gestion des stériles",
+      'projects.p1_tag': 'Excel avancé',
+      'projects.p1_mock1': 'Profondeur: 150 → 600 m',
+      'projects.p1_mock2': 'Distance halde-fosse: 1 → 6 km',
+      'projects.p1_mock3': '⚙ Flotte: 11 à 39 camions',
+
+      'projects.p2_meta': 'Projet de simulation · Java / AnyLogic',
+      'projects.p2_title': "Simulation multi-agents d'opérations minières sous AnyLogic",
+      'projects.p2_desc': "Modèle de simulation multi-agents d'une exploitation minière combinant événements discrets (DES) et agent-based pour évaluer la performance opérationnelle.",
+      'projects.p2_li1': "Flotte de 282 camions + 3 pelles + bulldozers avec positionnement spatial",
+      'projects.p2_li2': "Modélisation stochastique des pannes (TBF, durée d'arrêt) par équipement",
+      'projects.p2_li3': "Stations carburant, paliers d'excavation, calcul de tonnage dynamique",
+      'projects.p2_li4': "Analyse de 44 000+ événements de panne simulés sur l'horizon d'étude",
+      'projects.p2_li5': "Optimisation de la disponibilité et de la productivité opérationnelle",
+      'projects.p2_tag': 'Statistiques',
+      'projects.p2_mock1': '✓ 282 camions actifs',
+      'projects.p2_mock2': '⚠ 42 601 pannes simulées',
+      'projects.p2_mock3': '▸ TBF moyen: 205.4h',
+      'projects.p2_mock4': '▸ Tonnage cumulé: 182.0 Mt',
+
+      'projects.p3_meta': 'Projet personnel · 2026',
+      'projects.p3_title': 'Command Center — Dashboard + Agent IA WhatsApp',
+      'projects.p3_desc': "Plateforme d'analyse de données intelligente combinant un dashboard web adaptatif et un agent conversationnel WhatsApp propulsé par Claude (Anthropic).",
+      'projects.p3_li1': "Dashboard web single-file avec détection automatique de types (numérique, date, catégorie, spatial)",
+      'projects.p3_li2': "Visualisations adaptatives : histogrammes, camemberts, cartes X/Y, timelines, courbes cumulées",
+      'projects.p3_li3': "Support multi-feuilles Excel avec schéma et insights détectés par feuille",
+      'projects.p3_li4': "Agent WhatsApp : Claude appelle des outils (lecture Excel, agrégations, graphiques) via tool use",
+      'projects.p3_li5': "Génération de graphiques envoyés en image MMS directement sur WhatsApp",
+      'projects.p3_mock1': 'Input.xlsx · 10 feuilles',
+      'projects.p3_mock2': 'You: TBF moyen?',
+      'projects.p3_mock3': '🤖 205.4h sur 42 601 pannes',
+      'projects.p3_mock4': 'You: Histogramme?',
+      'projects.p3_mock5': '🤖 [📊 image envoyée]',
+
+      'exp.label': 'Expérience',
+      'exp.title': 'Parcours professionnel',
+      'exp.e1_date': 'Juillet – Août 2023',
+      'exp.e1_title': 'Stagiaire — Suivi des opérations minières',
+      'exp.e1_org': "Groupe Managem · site d'Amekssa (Bleida), Maroc",
+      'exp.e1_li1': "Analyse de la production de cuivre (8 500 à 9 000 t/jour) et des cycles d'une flotte de 2 pelles et 6 à 8 camions",
+      'exp.e1_li2': "Analyse fine des temps de cycle (18 à 25 min/rotation) : chargement 3–4 min, transport 8–12 min, attente et manœuvres",
+      'exp.e1_li3': "Identification des principaux facteurs d'efficacité opérationnelle et des causes de pertes de productivité sur le cycle camion-pelle",
+      'exp.e2_date': 'Juillet – Août 2022',
+      'exp.e2_title': 'Stagiaire junior — Logistique minière',
+      'exp.e2_org': 'Groupe OCP · El Jadida, Maroc',
+      'exp.e2_li1': "Étude de la chaîne logistique du phosphate entre Khouribga et Jorf Lasfar (187 km)",
+      'exp.e2_li2': "Analyse du pipeline de pulpe d'une capacité d'environ 38 Mt/an",
+      'exp.e2_li3': "Comparaison des modes de transport pipeline et ferroviaire (capacité, coûts, efficacité énergétique)",
+
+      'form.label': 'Formation',
+      'form.title': 'Études',
+      'form.f1_title': 'Maîtrise recherche (M.Sc.A.) en génie minéral',
+      'form.f1_school': 'Polytechnique Montréal, Canada<br/>Diplomation prévue : mai 2026',
+      'form.f2_title': "Diplôme d'ingénieur d'État en génie minéral",
+      'form.f2_school': "École Mohammadia d'Ingénieurs (EMI)<br/>Rabat, Maroc",
+      'form.f3_title': 'DEUG en sciences',
+      'form.f3_school': 'Université Chouaib Doukkali<br/>El Jadida, Maroc',
+
+      'contact.label': 'Contact',
+      'contact.title': 'Discutons !',
+      'contact.intro': "Une opportunité, un projet, une collaboration ? Remplissez le formulaire ci-dessous — je réponds généralement sous 24 h.",
+      'contact.f_prenom': 'Prénom',
+      'contact.f_nom': 'Nom',
+      'contact.f_email': 'Email',
+      'contact.f_message': 'Message',
+      'contact.ph_prenom': 'Votre prénom',
+      'contact.ph_nom': 'Votre nom',
+      'contact.ph_email': 'vous@exemple.com',
+      'contact.ph_message': 'Votre message...',
+      'contact.submit': '✉️ Envoyer le message',
+
+      'footer.text': 'Conçu et développé par Abdelghaffour El Mchiek · © 2026 · Montréal, QC'
+    },
+    en: {
+      'meta.title': "Abdelghaffour El Mchiek — Mining Engineer",
+      'meta.description': "Portfolio of Abdelghaffour El Mchiek — Mining engineer: rock mechanics, simulation, data analysis and applied AI.",
+
+      'nav.about': 'About',
+      'nav.skills': 'Skills',
+      'nav.projects': 'Projects',
+      'nav.experience': 'Experience',
+      'nav.formation': 'Education',
+      'nav.contact': 'Contact',
+
+      'hero.greeting': "{ Hi, I'm }",
+      'hero.subtitle': 'Mining engineer.<br/>Simulation, modeling, data.',
+      'hero.description': "Master's research candidate in mining engineering at Polytechnique Montréal. I design simulation models, analyze mining operations, and build decision-support tools — from rock mechanics to data analysis and applied AI.",
+      'hero.cta_projects': 'See my projects →',
+      'hero.cta_contact': 'Contact me',
+      'hero.status': 'Available',
+
+      'about.label': 'About',
+      'about.title': 'Who am I?',
+      'about.p1': "I'm a <strong>mining engineer</strong>, currently a master's research candidate in mining engineering at <strong>Polytechnique Montréal</strong> (graduating May 2026). I also hold a State Engineer degree in mining engineering from <strong>École Mohammadia d'Ingénieurs (EMI), Rabat</strong>.",
+      'about.p2': "My research project focuses on the <strong>optimization of backfilling sequences in an open-pit mine</strong>: I compared the Push/End-Dumping and Bottom-Up methods, identified the critical transition depth Hcrit ≈ 195–219 m, and produced unit-cost charts usable for planning.",
+      'about.p3': "My skills span <strong>rock mechanics</strong> (GeoStudio), <strong>mining software</strong> (Deswik, AutoCAD), <strong>multi-agent simulation</strong> (AnyLogic/Java) and <strong>data analysis</strong> (Python, advanced Excel, MiniZinc). I also built <em>Command Center</em>, a data analytics platform with a conversational AI agent.",
+      'about.p4': "I aim to apply this <strong>dual expertise — mining engineering + digital tools</strong> — to projects with strong field impact.",
+      'about.info_title': 'Information',
+      'about.location': 'Location',
+      'about.location_val': 'Montréal, QC 🇨🇦',
+      'about.phone': 'Phone',
+      'about.email': 'Email',
+      'about.education': 'Education',
+      'about.mobility': 'Mobility',
+      'about.languages': 'Languages',
+      'about.permit': 'Work permit',
+      'about.permit_val': 'Valid CA permit',
+      'about.status': 'Status',
+      'about.status_val': '● Available',
+
+      'skills.label': 'Skills',
+      'skills.title': 'What I master',
+      'skills.s1_title': 'Rock mechanics',
+      'skills.s1_desc': "Slope stability, stress-strain analyses, awareness of rock mass monitoring and induced seismicity.",
+      'skills.s1_t2': 'Stability',
+      'skills.s1_t3': 'Ground support',
+      'skills.s2_title': 'Mining software & engineering',
+      'skills.s2_desc': "Design of mining sequences, mine plans, pit modeling and academic projects.",
+      'skills.s3_title': 'Drilling, blasting & operations',
+      'skills.s3_desc': "Drilling and blasting parameters, truck-shovel cycle analysis, fleet sizing, backfilling methods and waste management.",
+      'skills.s3_t1': 'Drilling',
+      'skills.s3_t2': 'Blasting',
+      'skills.s3_t3': 'Backfilling',
+      'skills.s3_t4': 'Fleets',
+      'skills.s4_title': 'Data analysis',
+      'skills.s4_desc': "Statistical exploration, pivot tables, scenario analysis, visualization and constraint programming.",
+      'skills.s4_t4': 'Advanced Excel',
+      'skills.s5_title': 'Development & AI',
+      'skills.s5_desc': "Web apps, AI agent integration and tool use to turn operational data into decisions.",
+      'skills.s6_title': 'Languages & communication',
+      'skills.s6_desc': "Technical report writing, presentations, work in international and multicultural environments.",
+      'skills.s6_t1': 'Arabic (native)',
+      'skills.s6_t2': 'French (C1)',
+      'skills.s6_t3': 'English (professional)',
+
+      'projects.label': 'Projects',
+      'projects.title': 'My work',
+      'projects.p1_meta': "Master's thesis · 2023–2026",
+      'projects.p1_title': "Optimization of backfilling sequences in an open-pit mine",
+      'projects.p1_desc': "Comparison of <strong>Push/End-Dumping</strong> and <strong>Bottom-Up</strong> methods for simultaneous backfill during extraction, with identification of the critical transition depth.",
+      'projects.p1_li1': "Modeling of simultaneous extraction + backfill sequences for an open-pit mine",
+      'projects.p1_li2': "Depth variation (150 to 600 m) and pit-to-dump distance (1 to 6 km)",
+      'projects.p1_li3': "Identification of critical depth Hcrit ≈ 195 to 219 m depending on fleet configuration",
+      'projects.p1_li4': "Required fleet sizing (11 to 39 trucks) and unit-cost charts (CAD/t)",
+      'projects.p1_li5': "Operational recommendations and analysis of stability and waste management challenges",
+      'projects.p1_tag': 'Advanced Excel',
+      'projects.p1_mock1': 'Depth: 150 → 600 m',
+      'projects.p1_mock2': 'Pit-to-dump: 1 → 6 km',
+      'projects.p1_mock3': '⚙ Fleet: 11 to 39 trucks',
+
+      'projects.p2_meta': 'Simulation project · Java / AnyLogic',
+      'projects.p2_title': "Multi-agent simulation of mining operations in AnyLogic",
+      'projects.p2_desc': "Multi-agent simulation model of a mining operation combining discrete events (DES) and agent-based modeling to assess operational performance.",
+      'projects.p2_li1': "Fleet of 282 trucks + 3 shovels + bulldozers with spatial positioning",
+      'projects.p2_li2': "Stochastic breakdown modeling (TBF, downtime) per equipment",
+      'projects.p2_li3': "Fuel stations, bench levels, dynamic tonnage computation",
+      'projects.p2_li4': "Analysis of 44,000+ simulated breakdown events over the study horizon",
+      'projects.p2_li5': "Optimization of availability and operational productivity",
+      'projects.p2_tag': 'Statistics',
+      'projects.p2_mock1': '✓ 282 active trucks',
+      'projects.p2_mock2': '⚠ 42,601 breakdowns simulated',
+      'projects.p2_mock3': '▸ Mean TBF: 205.4h',
+      'projects.p2_mock4': '▸ Cumulative tonnage: 182.0 Mt',
+
+      'projects.p3_meta': 'Personal project · 2026',
+      'projects.p3_title': 'Command Center — Dashboard + WhatsApp AI Agent',
+      'projects.p3_desc': "Intelligent data analytics platform combining an adaptive web dashboard and a WhatsApp conversational agent powered by Claude (Anthropic).",
+      'projects.p3_li1': "Single-file web dashboard with automatic type detection (numeric, date, category, spatial)",
+      'projects.p3_li2': "Adaptive visualizations: histograms, pie charts, X/Y maps, timelines, cumulative curves",
+      'projects.p3_li3': "Multi-sheet Excel support with schema and insights detected per sheet",
+      'projects.p3_li4': "WhatsApp agent: Claude calls tools (Excel reads, aggregations, charts) via tool use",
+      'projects.p3_li5': "Chart generation sent as MMS images directly on WhatsApp",
+      'projects.p3_mock1': 'Input.xlsx · 10 sheets',
+      'projects.p3_mock2': 'You: Mean TBF?',
+      'projects.p3_mock3': '🤖 205.4h over 42,601 breakdowns',
+      'projects.p3_mock4': 'You: Histogram?',
+      'projects.p3_mock5': '🤖 [📊 image sent]',
+
+      'exp.label': 'Experience',
+      'exp.title': 'Professional journey',
+      'exp.e1_date': 'July – August 2023',
+      'exp.e1_title': 'Intern — Mining operations monitoring',
+      'exp.e1_org': 'Managem Group · Amekssa (Bleida) site, Morocco',
+      'exp.e1_li1': "Analysis of copper production (8,500 to 9,000 t/day) and cycles of a fleet of 2 shovels and 6 to 8 trucks",
+      'exp.e1_li2': "Fine-grained cycle time analysis (18 to 25 min/rotation): loading 3–4 min, haulage 8–12 min, waiting and maneuvers",
+      'exp.e1_li3': "Identification of the main operational efficiency factors and causes of productivity loss on the truck-shovel cycle",
+      'exp.e2_date': 'July – August 2022',
+      'exp.e2_title': 'Junior intern — Mining logistics',
+      'exp.e2_org': 'OCP Group · El Jadida, Morocco',
+      'exp.e2_li1': "Study of the phosphate logistics chain between Khouribga and Jorf Lasfar (187 km)",
+      'exp.e2_li2': "Analysis of a pulp pipeline with approx. 38 Mt/year capacity",
+      'exp.e2_li3': "Comparison of pipeline and rail transport modes (capacity, costs, energy efficiency)",
+
+      'form.label': 'Education',
+      'form.title': 'Studies',
+      'form.f1_title': "Master's research (M.Sc.A.) in mining engineering",
+      'form.f1_school': 'Polytechnique Montréal, Canada<br/>Expected graduation: May 2026',
+      'form.f2_title': 'State Engineer degree in mining engineering',
+      'form.f2_school': "École Mohammadia d'Ingénieurs (EMI)<br/>Rabat, Morocco",
+      'form.f3_title': 'DEUG in sciences (2-year university degree)',
+      'form.f3_school': 'Université Chouaib Doukkali<br/>El Jadida, Morocco',
+
+      'contact.label': 'Contact',
+      'contact.title': "Let's talk!",
+      'contact.intro': "An opportunity, a project, a collaboration? Fill in the form below — I usually reply within 24 hours.",
+      'contact.f_prenom': 'First name',
+      'contact.f_nom': 'Last name',
+      'contact.f_email': 'Email',
+      'contact.f_message': 'Message',
+      'contact.ph_prenom': 'Your first name',
+      'contact.ph_nom': 'Your last name',
+      'contact.ph_email': 'you@example.com',
+      'contact.ph_message': 'Your message...',
+      'contact.submit': '✉️ Send message',
+
+      'footer.text': 'Designed and built by Abdelghaffour El Mchiek · © 2026 · Montréal, QC'
+    }
+  };
+
+  function applyLang(lang) {
+    const dict = translations[lang] || translations.fr;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      const spec = el.getAttribute('data-i18n-attr');
+      spec.split(',').forEach(pair => {
+        const [attr, key] = pair.split(':').map(s => s.trim());
+        if (attr && key && dict[key] !== undefined) {
+          el.setAttribute(attr, dict[key]);
+        }
+      });
+    });
+
+    if (dict['meta.title']) document.title = dict['meta.title'];
+
+    document.querySelectorAll('.lang-opt').forEach(o => {
+      o.classList.toggle('active', o.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem('portfolio-lang', lang); } catch(e) {}
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyLang(opt.dataset.lang);
+    });
+  });
+
+  (function init() {
+    let saved = null;
+    try { saved = localStorage.getItem('portfolio-lang'); } catch(e) {}
+    if (!saved) {
+      const browser = (navigator.language || 'fr').toLowerCase();
+      saved = browser.startsWith('en') ? 'en' : 'fr';
+    }
+    applyLang(saved);
+  })();
+
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
-
   function updateActiveLink() {
     const scroll = window.scrollY + 120;
     sections.forEach(sec => {
