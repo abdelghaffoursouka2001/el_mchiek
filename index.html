@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abdelghaffour El Mchiek — Portfolio</title>
-<meta name="description" content="Portfolio d'Abdelghaffour El Mchiek — Ingénieur en simulation minière, développement d'applications d'analyse de données et agents IA." />
+<title>Abdelghaffour El Mchiek — Ingénieur en génie minier</title>
+<meta name="description" content="Portfolio d'Abdelghaffour El Mchiek — Ingénieur en génie minier : mécanique des roches, simulation, analyse de données et IA appliquée." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -33,7 +33,6 @@
   }
   .mono { font-family: 'JetBrains Mono', monospace; }
 
-  /* Animated background */
   body::before {
     content: '';
     position: fixed;
@@ -59,17 +58,9 @@
     border-bottom: 1px solid var(--border);
     z-index: 100;
   }
-  nav .logo {
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 1px;
-  }
+  nav .logo { font-weight: 700; font-size: 15px; letter-spacing: 1px; }
   nav .logo span { color: var(--accent); }
-  nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-  }
+  nav ul { display: flex; gap: 28px; list-style: none; }
   nav a {
     color: var(--text-dim);
     text-decoration: none;
@@ -78,7 +69,6 @@
     transition: color 0.2s;
   }
   nav a:hover { color: var(--text); }
-  .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; }
 
   /* Sections */
   section {
@@ -100,51 +90,117 @@
   /* Hero */
   .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
     padding-top: 120px;
   }
-  .hero .greeting {
+  .hero-text .greeting {
     color: var(--accent);
     font-size: 15px;
     margin-bottom: 20px;
     font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
   }
-  .hero h1 {
-    font-size: clamp(38px, 7vw, 72px);
+  .hero-text h1 {
+    font-size: clamp(38px, 6vw, 64px);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -2px;
     margin-bottom: 12px;
   }
-  .hero h1 .gradient {
+  .hero-text h1 .gradient {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent-4) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .hero h2 {
-    font-size: clamp(24px, 4vw, 44px);
+  .hero-text h2 {
+    font-size: clamp(20px, 3vw, 32px);
     font-weight: 700;
     color: var(--text-dim);
-    line-height: 1.1;
-    margin-bottom: 28px;
+    line-height: 1.2;
+    margin-bottom: 24px;
     letter-spacing: -1px;
   }
-  .hero p {
-    font-size: 17px;
+  .hero-text p {
+    font-size: 16px;
     color: var(--text-dim);
-    max-width: 600px;
-    margin-bottom: 36px;
+    max-width: 560px;
+    margin-bottom: 32px;
   }
-  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Profile photo */
+  .profile-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .profile-frame {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-4));
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+    position: relative;
+  }
+  .profile-frame::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border: 1px dashed rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    background: var(--bg-card);
+    display: block;
+  }
+  .profile-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a8a, #065f46);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -3px;
+    font-family: 'Inter', sans-serif;
+  }
+  .status-dot {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    border: 4px solid var(--bg);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
+    z-index: 2;
+  }
 
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 28px;
+    padding: 14px 26px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
@@ -152,11 +208,9 @@
     transition: all 0.2s;
     font-family: 'JetBrains Mono', monospace;
     border: 1px solid transparent;
+    cursor: pointer;
   }
-  .btn-primary {
-    background: var(--accent);
-    color: white;
-  }
+  .btn-primary { background: var(--accent); color: white; }
   .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
   .btn-outline {
     background: transparent;
@@ -165,7 +219,6 @@
   }
   .btn-outline:hover { background: rgba(59, 130, 246, 0.1); transform: translateY(-2px); }
 
-  /* Section titles */
   h2.section-title {
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 700;
@@ -217,10 +270,17 @@
     padding: 10px 0;
     border-bottom: 1px solid var(--border);
     font-size: 14px;
+    gap: 12px;
   }
   .info-row:last-child { border-bottom: none; }
-  .info-row .label { color: var(--text-muted); }
-  .info-row .value { color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .info-row .label { color: var(--text-muted); flex-shrink: 0; }
+  .info-row .value {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-align: right;
+  }
+  .info-row .value a { color: var(--accent); text-decoration: none; }
 
   /* Skills */
   .skills-grid {
@@ -236,26 +296,10 @@
     transition: all 0.2s;
   }
   .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-  .skill-card .icon {
-    font-size: 28px;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .skill-card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  .skill-card p {
-    color: var(--text-dim);
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
-  .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+  .skill-card .icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .skill-card h3 { font-size: 17px; margin-bottom: 10px; font-weight: 600; }
+  .skill-card p { color: var(--text-dim); font-size: 14px; margin-bottom: 16px; }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -359,20 +403,18 @@
     text-transform: uppercase;
   }
   .project-content h3 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 16px;
     font-weight: 700;
     letter-spacing: -0.5px;
+    line-height: 1.3;
   }
   .project-content p {
     color: var(--text-dim);
     font-size: 15px;
     margin-bottom: 16px;
   }
-  .project-content ul {
-    list-style: none;
-    margin-bottom: 20px;
-  }
+  .project-content ul { list-style: none; margin-bottom: 20px; }
   .project-content ul li {
     color: var(--text-dim);
     font-size: 14px;
@@ -386,53 +428,187 @@
     left: 0;
     color: var(--accent);
   }
-  .project-links {
-    display: flex;
-    gap: 16px;
-    margin-top: 10px;
-  }
-  .project-links a {
-    color: var(--text-dim);
-    font-size: 20px;
-    transition: color 0.2s;
-    text-decoration: none;
-  }
-  .project-links a:hover { color: var(--accent); }
 
-  /* Contact */
-  .contact {
-    text-align: center;
-    padding: 140px 40px 100px;
+  /* Experience timeline */
+  .timeline {
+    position: relative;
+    padding-left: 30px;
   }
-  .contact h2.section-title {
-    justify-content: center;
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
   }
-  .contact h2.section-title::after { display: none; }
-  .contact p {
-    font-size: 17px;
+  .timeline-item {
+    position: relative;
+    margin-bottom: 36px;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.2s;
+  }
+  .timeline-item:hover { border-color: var(--accent); transform: translateX(4px); }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 28px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .timeline-item .date {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .timeline-item h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .timeline-item .org {
     color: var(--text-dim);
-    max-width: 500px;
-    margin: 0 auto 36px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-style: italic;
   }
-  .contact .btn-primary {
-    padding: 18px 40px;
+  .timeline-item ul { list-style: none; }
+  .timeline-item ul li {
+    color: var(--text-dim);
+    font-size: 14px;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .timeline-item ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* Formation */
+  .formation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .formation-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.2s;
+  }
+  .formation-card:hover { border-color: var(--accent-2); transform: translateY(-4px); }
+  .formation-card .year {
+    color: var(--accent-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .formation-card h3 { font-size: 16px; margin-bottom: 6px; font-weight: 600; line-height: 1.3; }
+  .formation-card .school { color: var(--text-dim); font-size: 14px; font-style: italic; }
+
+  /* Contact form */
+  .contact-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-field label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .form-field input,
+  .form-field textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  .form-field textarea { resize: vertical; min-height: 130px; }
+  .form-submit { text-align: center; margin-top: 10px; }
+  .form-submit button { border: none; cursor: pointer; font-family: 'JetBrains Mono', monospace; }
+
+  .contact-intro {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .contact-intro p {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 540px;
+    margin: 0 auto 20px;
+  }
+  .contact-email-display {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
     font-size: 16px;
   }
+  .contact-email-display a { color: inherit; text-decoration: none; }
+
   .social-links {
     display: flex;
     justify-content: center;
-    gap: 24px;
-    margin-top: 40px;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
   }
   .social-links a {
     color: var(--text-dim);
-    font-size: 22px;
+    font-size: 14px;
     text-decoration: none;
-    transition: color 0.2s;
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-family: 'JetBrains Mono', monospace;
   }
-  .social-links a:hover { color: var(--accent); transform: translateY(-2px); }
+  .social-links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
 
-  /* Footer */
   footer {
     text-align: center;
     padding: 30px 40px;
@@ -442,15 +618,26 @@
     font-size: 12px;
   }
 
-  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; text-align: center; padding-top: 110px; }
+    .hero-text p { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .profile-frame { width: 220px; height: 220px; }
+  }
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
-    nav ul { display: none; }
+    nav ul { gap: 16px; font-size: 13px; }
     section { padding: 80px 20px 40px; }
     .about-grid, .project-grid { grid-template-columns: 1fr; }
     .project.reverse .project-grid { direction: ltr; }
     .project-visual { min-height: 240px; padding: 24px; }
     .project-content { padding: 28px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .contact-wrapper { padding: 28px 20px; }
+    .timeline { padding-left: 24px; }
+  }
+  @media (max-width: 560px) {
+    nav ul { display: none; }
   }
 </style>
 </head>
@@ -461,22 +648,35 @@
       <li><a href="#about">À propos</a></li>
       <li><a href="#skills">Compétences</a></li>
       <li><a href="#projects">Projets</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#formation">Formation</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <div class="greeting mono">{ Bonjour, je suis }</div>
-    <h1><span class="gradient">Abdelghaffour</span><br/>El Mchiek.</h1>
-    <h2>Je modélise, j'analyse,<br/>je construis des outils intelligents.</h2>
-    <p>
-      Ingénieur en simulation d'opérations minières. Je conçois des modèles de simulation
-      avec AnyLogic, je développe des applications d'analyse de données, et j'intègre
-      l'intelligence artificielle pour transformer les données en décisions.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
-      <a href="#contact" class="btn btn-outline">Me contacter</a>
+    <div class="hero-text">
+      <div class="greeting">{ Bonjour, je suis }</div>
+      <h1><span class="gradient">Abdelghaffour</span><br/>El Mchiek.</h1>
+      <h2>Ingénieur en génie minier.<br/>Simulation, modélisation, données.</h2>
+      <p>
+        Candidat à la maîtrise recherche en génie minéral à Polytechnique Montréal.
+        Je conçois des modèles de simulation, j'analyse les opérations minières et
+        je développe des outils d'aide à la décision — de la mécanique des roches
+        à l'analyse de données et à l'IA appliquée.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+    </div>
+    <div class="profile-wrap">
+      <div class="profile-frame">
+        <img src="assets/profile.jpg" alt="Abdelghaffour El Mchiek" class="profile-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="profile-fallback" style="display:none;">AEM</div>
+        <div class="status-dot" title="Disponible"></div>
+      </div>
     </div>
   </section>
 
@@ -486,37 +686,40 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Je suis un <strong>ingénieur en génie minier</strong> passionné par la
-          simulation, la modélisation et l'analyse de données. Mon parcours combine
-          l'expertise métier minière avec des compétences techniques en développement
-          et en intelligence artificielle.
+          Je suis un <strong>ingénieur en génie minier</strong>, actuellement candidat à la
+          maîtrise recherche en génie minéral à <strong>Polytechnique Montréal</strong>
+          (diplomation prévue mai 2026). Je suis également titulaire d'une formation
+          d'ingénieur d'État en génie minéral de l'<strong>École Mohammadia d'Ingénieurs
+          (EMI), Rabat</strong>.
         </p>
         <p>
-          Dans le cadre de mon <strong>mémoire de maîtrise</strong>, j'ai développé un
-          modèle de simulation d'opérations minières sous <strong>AnyLogic</strong> :
-          flotte de camions, pelles, bulldozers, stations carburant, modèle de pannes
-          (MTBF/TBF), tonnages par palier. Le modèle permet d'évaluer les performances
-          opérationnelles et d'optimiser la planification de la production.
+          Mon projet de recherche porte sur l'<strong>optimisation des séquences de
+          remblayage d'une mine à ciel ouvert</strong> : j'ai comparé les méthodes
+          Push/End-Dumping et Bottom-Up, identifié la profondeur critique de bascule
+          Hcrit ≈ 195–219 m, et produit des abaques de coûts unitaires exploitables
+          en planification.
         </p>
         <p>
-          Récemment, j'ai construit <strong>Command Center</strong> : une plateforme
-          combinant un dashboard web intelligent pour l'analyse de données multi-feuilles
-          et un agent conversationnel WhatsApp propulsé par Claude (Anthropic) pour
-          interroger les données en langage naturel.
+          Mes compétences couvrent la <strong>mécanique des roches</strong> (GeoStudio),
+          les <strong>logiciels miniers</strong> (Deswik, AutoCAD), la <strong>simulation
+          multi-agents</strong> (AnyLogic/Java) et l'<strong>analyse de données</strong>
+          (Python, Excel avancé, MiniZinc). J'ai également développé <em>Command Center</em>,
+          une plateforme d'analyse de données avec agent IA conversationnel.
         </p>
         <p>
-          Je cherche à appliquer cette double compétence — <strong>ingénierie métier
-          + technologies modernes</strong> — à des projets qui ont un impact.
+          Je cherche à appliquer cette <strong>double compétence ingénierie minière +
+          outils numériques</strong> à des projets à fort impact terrain.
         </p>
       </div>
       <div class="about-card">
         <h3>Informations</h3>
-        <div class="info-row"><span class="label">Email</span><span class="value" style="font-size:11px"><a href="mailto:abdelghafour.elmchiek@gmail.com" style="color:var(--accent);text-decoration:none">abdelghafour.elmchiek@gmail.com</a></span></div>
-        <div class="info-row"><span class="label">Localisation</span><span class="value">🌍</span></div>
-        <div class="info-row"><span class="label">Spécialité</span><span class="value">Simulation</span></div>
-        <div class="info-row"><span class="label">Diplôme</span><span class="value">Maîtrise</span></div>
-        <div class="info-row"><span class="label">Outils clés</span><span class="value">AnyLogic · Python</span></div>
+        <div class="info-row"><span class="label">Localisation</span><span class="value">Montréal, QC 🇨🇦</span></div>
+        <div class="info-row"><span class="label">Téléphone</span><span class="value">438-470-5280</span></div>
+        <div class="info-row"><span class="label">Email</span><span class="value" style="font-size:11px"><a href="mailto:abdelghafour.elmchiek@gmail.com">abdelghafour.elmchiek@gmail.com</a></span></div>
+        <div class="info-row"><span class="label">Formation</span><span class="value">M.Sc.A. Polytechnique</span></div>
+        <div class="info-row"><span class="label">Mobilité</span><span class="value">FIFO · 4/3</span></div>
         <div class="info-row"><span class="label">Langues</span><span class="value">FR · EN · AR</span></div>
+        <div class="info-row"><span class="label">Permis</span><span class="value">Travail CA valide</span></div>
         <div class="info-row"><span class="label">Statut</span><span class="value" style="color: var(--accent-2)">● Disponible</span></div>
       </div>
     </div>
@@ -527,70 +730,67 @@
     <h2 class="section-title"><span class="num">02.</span> Ce que je maîtrise</h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <span class="icon">⚙️</span>
-        <h3>Simulation & Modélisation</h3>
-        <p>Conception de modèles d'opérations complexes, agents, événements discrets, systèmes dynamiques.</p>
+        <span class="icon">⛰️</span>
+        <h3>Mécanique des roches</h3>
+        <p>Stabilité de pente, analyses contraintes-déformations, notions de surveillance du massif rocheux et de sismicité induite.</p>
         <div class="tech-tags">
-          <span class="tag">AnyLogic</span>
-          <span class="tag">DES</span>
-          <span class="tag">Agent-based</span>
-          <span class="tag">Monte Carlo</span>
+          <span class="tag">GeoStudio</span>
+          <span class="tag">Stabilité</span>
+          <span class="tag">Soutènement</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">⚙️</span>
+        <h3>Logiciels miniers & ingénierie</h3>
+        <p>Conception de séquences d'exploitation, plans miniers, modélisation de fosses et projets académiques.</p>
+        <div class="tech-tags">
+          <span class="tag green">Deswik</span>
+          <span class="tag green">AutoCAD</span>
+          <span class="tag green">AnyLogic</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <span class="icon">💥</span>
+        <h3>Forage, sautage & opérations</h3>
+        <p>Paramètres de forage et sautage, analyse de cycles camion-pelle, dimensionnement de flottes, méthodes de remblayage et gestion des stériles.</p>
+        <div class="tech-tags">
+          <span class="tag orange">Forage</span>
+          <span class="tag orange">Sautage</span>
+          <span class="tag orange">Remblayage</span>
+          <span class="tag orange">Flottes</span>
         </div>
       </div>
       <div class="skill-card">
         <span class="icon">📊</span>
         <h3>Analyse de données</h3>
-        <p>Exploration, statistiques descriptives, visualisation, détection de patterns dans des jeux de données industriels.</p>
+        <p>Exploration statistique, tableaux croisés, analyse de scénarios, visualisation et programmation par contraintes.</p>
         <div class="tech-tags">
-          <span class="tag green">Python</span>
-          <span class="tag green">Pandas</span>
-          <span class="tag green">NumPy</span>
-          <span class="tag green">Matplotlib</span>
-          <span class="tag green">Excel</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <span class="icon">💻</span>
-        <h3>Développement Web</h3>
-        <p>Applications web interactives, dashboards, interfaces utilisateur modernes et responsives.</p>
-        <div class="tech-tags">
-          <span class="tag orange">HTML</span>
-          <span class="tag orange">CSS</span>
-          <span class="tag orange">JavaScript</span>
-          <span class="tag orange">Chart.js</span>
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Excel avancé</span>
+          <span class="tag">MiniZinc</span>
         </div>
       </div>
       <div class="skill-card">
         <span class="icon">🤖</span>
-        <h3>Intelligence Artificielle</h3>
-        <p>Intégration d'agents IA, tool use, prompt engineering pour transformer les données en insights conversationnels.</p>
+        <h3>Développement & IA</h3>
+        <p>Applications web, intégration d'agents IA et tool use pour transformer les données d'exploitation en décisions.</p>
         <div class="tech-tags">
+          <span class="tag purple">JavaScript</span>
+          <span class="tag purple">Java</span>
+          <span class="tag purple">FastAPI</span>
           <span class="tag purple">Claude API</span>
-          <span class="tag purple">Anthropic SDK</span>
-          <span class="tag purple">Tool Use</span>
-          <span class="tag purple">LLM</span>
         </div>
       </div>
       <div class="skill-card">
-        <span class="icon">⚡</span>
-        <h3>Backend & APIs</h3>
-        <p>Serveurs Python, APIs REST, webhooks, intégrations tierces (messagerie, paiement, cloud).</p>
+        <span class="icon">🗣️</span>
+        <h3>Langues & communication</h3>
+        <p>Rédaction de rapports techniques, présentations, travail en environnement international et multiculturel.</p>
         <div class="tech-tags">
-          <span class="tag">FastAPI</span>
-          <span class="tag">REST</span>
-          <span class="tag">Twilio</span>
-          <span class="tag">WhatsApp</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <span class="icon">🛠️</span>
-        <h3>Outils & DevOps</h3>
-        <p>Versionning, déploiement cloud, environnements de développement, collaboration d'équipe.</p>
-        <div class="tech-tags">
-          <span class="tag orange">Git</span>
-          <span class="tag orange">GitHub</span>
-          <span class="tag orange">Railway</span>
-          <span class="tag orange">VS Code</span>
+          <span class="tag green">Arabe (natif)</span>
+          <span class="tag green">Français (C1)</span>
+          <span class="tag green">Anglais (pro)</span>
         </div>
       </div>
     </div>
@@ -600,8 +800,57 @@
     <span class="section-label">Projets</span>
     <h2 class="section-title"><span class="num">03.</span> Mes réalisations</h2>
 
-    <!-- Projet 1 : Mémoire AnyLogic -->
+    <!-- Projet 1 : Mémoire de maîtrise — Remblayage -->
     <div class="project">
+      <div class="project-grid">
+        <div class="project-visual">
+          <div class="mock">
+            <div class="mock-header">
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+            </div>
+            <div class="mock-content">
+              <div class="mock-line" style="color: var(--accent)">▸ REMBLAYAGE — Push vs Bottom-Up</div>
+              <div class="mock-line">Profondeur: 150 → 600 m</div>
+              <div class="mock-line">Distance halde-fosse: 1 → 6 km</div>
+              <div class="mock-bar w-80"></div>
+              <div class="mock-bar w-60"></div>
+              <div class="mock-line" style="color: var(--accent-2); margin-top: 6px;">✓ Hcrit ≈ 195 à 219 m</div>
+              <div class="mock-line" style="color: var(--accent-3)">⚙ Flotte: 11 à 39 camions</div>
+              <div class="mock-bar w-45"></div>
+              <div class="mock-bar w-70"></div>
+              <div class="mock-line" style="color: var(--text-muted); margin-top: 6px;">// Abaques CAD/t</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">Mémoire de maîtrise · 2023–2026</div>
+          <h3>Optimisation des séquences de remblayage d'une mine à ciel ouvert</h3>
+          <p>
+            Comparaison des méthodes <strong>Push/End-Dumping</strong> et <strong>Bottom-Up</strong>
+            pour le remblayage simultané à l'extraction, avec identification de la profondeur
+            critique de bascule.
+          </p>
+          <ul>
+            <li>Modélisation des séquences extraction + remblayage simultanées sur fosse à ciel ouvert</li>
+            <li>Variation de la profondeur (150 à 600 m) et de la distance halde-fosse (1 à 6 km)</li>
+            <li>Identification de la profondeur critique Hcrit ≈ 195 à 219 m selon la configuration de flotte</li>
+            <li>Dimensionnement de flotte requis (11 à 39 camions) et abaques de coûts unitaires (CAD/t)</li>
+            <li>Recommandations opérationnelles et analyse des enjeux de stabilité et de gestion des stériles</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tag">Deswik</span>
+            <span class="tag green">Python</span>
+            <span class="tag orange">Excel avancé</span>
+            <span class="tag purple">MiniZinc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projet 2 : Simulation AnyLogic -->
+    <div class="project reverse">
       <div class="project-grid">
         <div class="project-visual">
           <div class="mock">
@@ -625,11 +874,12 @@
           </div>
         </div>
         <div class="project-content">
-          <div class="project-meta">Mémoire de maîtrise · 2024-2025</div>
-          <h3>Simulation d'opérations minières sous AnyLogic</h3>
+          <div class="project-meta">Projet de simulation · Java / AnyLogic</div>
+          <h3>Simulation multi-agents d'opérations minières sous AnyLogic</h3>
           <p>
-            Développement d'un modèle de simulation multi-agents pour une exploitation minière,
-            combinant événements discrets (DES) et modélisation agent-based.
+            Modèle de simulation multi-agents d'une exploitation minière combinant
+            événements discrets (DES) et agent-based pour évaluer la performance
+            opérationnelle.
           </p>
           <ul>
             <li>Flotte de 282 camions + 3 pelles + bulldozers avec positionnement spatial</li>
@@ -648,8 +898,8 @@
       </div>
     </div>
 
-    <!-- Projet 2 : Command Center -->
-    <div class="project reverse">
+    <!-- Projet 3 : Command Center -->
+    <div class="project">
       <div class="project-grid">
         <div class="project-visual">
           <div class="mock">
@@ -676,15 +926,14 @@
           <div class="project-meta">Projet personnel · 2026</div>
           <h3>Command Center — Dashboard + Agent IA WhatsApp</h3>
           <p>
-            Plateforme d'analyse de données intelligente combinant une interface web
-            adaptative et un agent conversationnel WhatsApp propulsé par Claude (Anthropic).
+            Plateforme d'analyse de données intelligente combinant un dashboard web
+            adaptatif et un agent conversationnel WhatsApp propulsé par Claude (Anthropic).
           </p>
           <ul>
             <li>Dashboard web single-file avec détection automatique de types (numérique, date, catégorie, spatial)</li>
             <li>Visualisations adaptatives : histogrammes, camemberts, cartes X/Y, timelines, courbes cumulées</li>
             <li>Support multi-feuilles Excel avec schéma et insights détectés par feuille</li>
             <li>Agent WhatsApp : Claude appelle des outils (lecture Excel, agrégations, graphiques) via tool use</li>
-            <li>Adaptive thinking + prompt caching pour optimiser coûts et performance</li>
             <li>Génération de graphiques envoyés en image MMS directement sur WhatsApp</li>
           </ul>
           <div class="tech-tags">
@@ -693,44 +942,120 @@
             <span class="tag green">FastAPI</span>
             <span class="tag purple">Claude API</span>
             <span class="tag orange">Twilio</span>
-            <span class="tag">Chart.js</span>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 
-  <section id="contact" class="contact">
-    <span class="section-label">Contact</span>
-    <h2 class="section-title"><span class="num">04.</span> Discutons !</h2>
-    <p>
-      Une opportunité, un projet de simulation, une collaboration ?
-      Je suis ouvert aux échanges. N'hésite pas à me contacter.
-    </p>
-    <div class="mono" style="font-size:18px;color:var(--accent);margin-bottom:24px">
-      <a href="mailto:abdelghafour.elmchiek@gmail.com" style="color:inherit;text-decoration:none">abdelghafour.elmchiek@gmail.com</a>
+  <section id="experience">
+    <span class="section-label">Expérience</span>
+    <h2 class="section-title"><span class="num">04.</span> Parcours professionnel</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">Juillet – Août 2023</div>
+        <h3>Stagiaire — Suivi des opérations minières</h3>
+        <div class="org">Groupe Managem · site d'Amekssa (Bleida), Maroc</div>
+        <ul>
+          <li>Analyse de la production de cuivre (8 500 à 9 000 t/jour) et des cycles d'une flotte de 2 pelles et 6 à 8 camions</li>
+          <li>Analyse fine des temps de cycle (18 à 25 min/rotation) : chargement 3–4 min, transport 8–12 min, attente et manœuvres</li>
+          <li>Identification des principaux facteurs d'efficacité opérationnelle et des causes de pertes de productivité sur le cycle camion-pelle</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="date">Juillet – Août 2022</div>
+        <h3>Stagiaire junior — Logistique minière</h3>
+        <div class="org">Groupe OCP · El Jadida, Maroc</div>
+        <ul>
+          <li>Étude de la chaîne logistique du phosphate entre Khouribga et Jorf Lasfar (187 km)</li>
+          <li>Analyse du pipeline de pulpe d'une capacité d'environ 38 Mt/an</li>
+          <li>Comparaison des modes de transport pipeline et ferroviaire (capacité, coûts, efficacité énergétique)</li>
+        </ul>
+      </div>
     </div>
-    <a href="mailto:abdelghafour.elmchiek@gmail.com" class="btn btn-primary">
-      ✉️ M'envoyer un email
-    </a>
+  </section>
+
+  <section id="formation">
+    <span class="section-label">Formation</span>
+    <h2 class="section-title"><span class="num">05.</span> Études</h2>
+    <div class="formation-grid">
+      <div class="formation-card">
+        <div class="year">2023 — 2026</div>
+        <h3>Maîtrise recherche (M.Sc.A.) en génie minéral</h3>
+        <div class="school">Polytechnique Montréal, Canada<br/>Diplomation prévue : mai 2026</div>
+      </div>
+      <div class="formation-card">
+        <div class="year">2021 — 2026</div>
+        <h3>Diplôme d'ingénieur d'État en génie minéral</h3>
+        <div class="school">École Mohammadia d'Ingénieurs (EMI)<br/>Rabat, Maroc</div>
+      </div>
+      <div class="formation-card">
+        <div class="year">2019 — 2021</div>
+        <h3>DEUG en sciences</h3>
+        <div class="school">Université Chouaib Doukkali<br/>El Jadida, Maroc</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title"><span class="num">06.</span> Discutons !</h2>
+    <div class="contact-intro">
+      <p>
+        Une opportunité, un projet, une collaboration ? Remplissez le formulaire
+        ci-dessous — je réponds généralement sous 24 h.
+      </p>
+      <div class="contact-email-display">
+        <a href="mailto:abdelghafour.elmchiek@gmail.com">abdelghafour.elmchiek@gmail.com</a>
+      </div>
+    </div>
+    <div class="contact-wrapper">
+      <form action="https://formsubmit.co/abdelghafour.elmchiek@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="Prénom" required placeholder="Votre prénom">
+          </div>
+          <div class="form-field">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="Nom" required placeholder="Votre nom">
+          </div>
+          <div class="form-field full">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required placeholder="vous@exemple.com">
+          </div>
+          <div class="form-field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" required placeholder="Votre message..."></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">✉️ Envoyer le message</button>
+        </div>
+      </form>
+    </div>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/abdelghaffour-el-mchiek-9b5203229/" target="_blank" rel="noopener" title="LinkedIn">💼 LinkedIn</a>
-      <a href="mailto:abdelghafour.elmchiek@gmail.com" title="Email">✉️ Email</a>
+      <a href="mailto:abdelghafour.elmchiek@gmail.com">✉️ Gmail</a>
+      <a href="https://www.linkedin.com/in/abdelghaffour-el-mchiek/" target="_blank" rel="noopener">💼 LinkedIn</a>
+      <a href="tel:+14384705280">📞 438-470-5280</a>
     </div>
   </section>
 
   <footer>
-    <div>Conçu et développé par Abdelghaffour El Mchiek · © 2026</div>
+    <div>Conçu et développé par Abdelghaffour El Mchiek · © 2026 · Montréal, QC</div>
   </footer>
 
 <script>
-  // Smooth scroll highlight on nav
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
 
   function updateActiveLink() {
-    const scroll = window.scrollY + 100;
+    const scroll = window.scrollY + 120;
     sections.forEach(sec => {
       if (scroll >= sec.offsetTop && scroll < sec.offsetTop + sec.offsetHeight) {
         navLinks.forEach(a => a.style.color = '');
