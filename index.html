@@ -8,7 +8,7 @@
 
 <!-- SEO -->
 <meta name="author" content="Abdelghaffour El Mchiek">
-<meta name="keywords" content="Abdelghaffour El Mchiek, El Mchiek, ingénieur génie minier, mining engineer, Polytechnique Montréal, EMI Rabat, AnyLogic, Deswik, GeoStudio, simulation minière, remblayage, Push End-Dumping, Bottom-Up, Montréal Québec, CPI, contrôle de terrain">
+<meta name="keywords" content="Abdelghaffour El Mchiek, El Mchiek, ingénieur génie minier, ingénieur minier Montréal, mining engineer, Polytechnique Montréal, EMI Rabat, AnyLogic, Deswik, GeoStudio, simulation minière, remblayage, Push End-Dumping, Bottom-Up, mine à ciel ouvert, Montréal Québec, CPI, contrôle de terrain, mémoire maîtrise, optimisation minière, analyse de données, Python, Java">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://abdelghaffoursouka2001.github.io/el_mchiek/">
 
@@ -92,6 +92,51 @@
     "https://www.linkedin.com/in/abdelghaffour-el-mchiek/",
     "https://github.com/abdelghaffoursouka2001"
   ]
+}
+</script>
+
+<!-- WebSite schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://abdelghaffoursouka2001.github.io/el_mchiek/",
+  "name": "Abdelghaffour El Mchiek — Portfolio",
+  "description": "Portfolio officiel d'Abdelghaffour El Mchiek, ingénieur en génie minier à Montréal.",
+  "inLanguage": ["fr-CA", "en"],
+  "author": {
+    "@type": "Person",
+    "name": "Abdelghaffour El Mchiek"
+  }
+}
+</script>
+
+<!-- CreativeWork schema : memoire de maitrise -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Thesis",
+  "name": "Optimisation des séquences de remblayage d'une mine à ciel ouvert : comparaison Push/End-Dumping et Bottom-Up",
+  "author": {
+    "@type": "Person",
+    "name": "Abdelghaffour El Mchiek"
+  },
+  "about": [
+    "Génie minier",
+    "Remblayage minier",
+    "Mine à ciel ouvert",
+    "Optimisation des opérations",
+    "Push/End-Dumping",
+    "Bottom-Up"
+  ],
+  "datePublished": "2026",
+  "publisher": {
+    "@type": "CollegeOrUniversity",
+    "name": "Polytechnique Montréal",
+    "url": "https://www.polymtl.ca/"
+  },
+  "inLanguage": "fr",
+  "url": "https://abdelghaffoursouka2001.github.io/el_mchiek/#projects"
 }
 </script>
 
@@ -717,6 +762,96 @@
     transform: translateY(-2px);
   }
 
+  /* Stats section */
+  .stats-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px 40px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 20px;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 10px 14px;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  /* Documents section */
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .doc-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s;
+    align-items: center;
+    color: inherit;
+  }
+  .doc-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+  }
+  .doc-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .doc-icon { font-size: 30px; }
+  .doc-info { flex: 1; min-width: 0; }
+  .doc-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+  .doc-info p { font-size: 13px; color: var(--text-dim); margin-bottom: 8px; }
+  .doc-action {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .doc-card:hover .doc-action { color: var(--accent-2); }
+  .doc-card.doc-unavailable { opacity: 0.6; cursor: not-allowed; }
+  .doc-card.doc-unavailable:hover { transform: none; border-color: var(--border); box-shadow: none; }
+  .doc-card.doc-unavailable .doc-action { color: var(--accent-3); }
+
   footer {
     text-align: center;
     padding: 30px 40px;
@@ -734,9 +869,14 @@
   }
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
-    nav ul { gap: 16px; font-size: 13px; }
+    nav ul { gap: 14px; font-size: 12px; }
     nav .nav-right { gap: 12px; }
     section { padding: 80px 20px 40px; }
+    .stats-section { padding: 10px 20px 30px; }
+    .stats-grid { padding: 20px 10px; }
+    .stat-num { font-size: 28px; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+    .stat-item:last-child { border-bottom: none; }
     .about-grid, .project-grid { grid-template-columns: 1fr; }
     .project.reverse .project-grid { direction: ltr; }
     .project-visual { min-height: 240px; padding: 24px; }
@@ -760,6 +900,7 @@
         <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
         <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
         <li><a href="#formation" data-i18n="nav.formation">Formation</a></li>
+        <li><a href="#documents" data-i18n="nav.documents">Documents</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="lang-toggle" role="group" aria-label="Language selector">
@@ -792,6 +933,31 @@
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
         <div class="profile-fallback" style="display:none;">AEM</div>
         <div class="status-dot" data-i18n-attr="title:hero.status" title="Disponible"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section" aria-label="Chiffres clés">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label" data-i18n="stats.projects">Projets majeurs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label" data-i18n="stats.internships">Stages industriels</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">282</div>
+        <div class="stat-label" data-i18n="stats.trucks">Camions simulés</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">42K+</div>
+        <div class="stat-label" data-i18n="stats.breakdowns">Pannes analysées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label" data-i18n="stats.languages">Langues pro</div>
       </div>
     </div>
   </section>
@@ -1110,9 +1276,36 @@
     </div>
   </section>
 
+  <section id="documents">
+    <span class="section-label" data-i18n="docs.label">Documents</span>
+    <h2 class="section-title"><span class="num">06.</span> <span data-i18n="docs.title">Téléchargements</span></h2>
+    <div class="docs-grid">
+      <a href="assets/cv.pdf" download="CV_Abdelghaffour_ElMchiek.pdf" class="doc-card" target="_blank" rel="noopener">
+        <div class="doc-icon-wrap">
+          <span class="doc-icon">📄</span>
+        </div>
+        <div class="doc-info">
+          <h3 data-i18n="docs.cv_title">Curriculum Vitae</h3>
+          <p data-i18n="docs.cv_desc">CV complet · PDF · Français</p>
+          <span class="doc-action" data-i18n="docs.download">Télécharger →</span>
+        </div>
+      </a>
+      <a href="assets/memoire.pdf" download="Memoire_ElMchiek_Remblayage.pdf" class="doc-card" target="_blank" rel="noopener">
+        <div class="doc-icon-wrap">
+          <span class="doc-icon">📘</span>
+        </div>
+        <div class="doc-info">
+          <h3 data-i18n="docs.memoire_title">Mémoire de maîtrise</h3>
+          <p data-i18n="docs.memoire_desc">Optimisation du remblayage · PDF · 2026</p>
+          <span class="doc-action" data-i18n="docs.download">Télécharger →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <section id="contact">
     <span class="section-label" data-i18n="contact.label">Contact</span>
-    <h2 class="section-title"><span class="num">06.</span> <span data-i18n="contact.title">Discutons !</span></h2>
+    <h2 class="section-title"><span class="num">07.</span> <span data-i18n="contact.title">Discutons !</span></h2>
     <div class="contact-intro">
       <p data-i18n="contact.intro">
         Une opportunité, un projet, une collaboration ? Remplissez le formulaire
@@ -1194,7 +1387,23 @@ Mining Engineer · Montréal, QC">
       'nav.projects': 'Projets',
       'nav.experience': 'Expérience',
       'nav.formation': 'Formation',
+      'nav.documents': 'Documents',
       'nav.contact': 'Contact',
+
+      'stats.projects': 'Projets majeurs',
+      'stats.internships': 'Stages industriels',
+      'stats.trucks': 'Camions simulés',
+      'stats.breakdowns': 'Pannes analysées',
+      'stats.languages': 'Langues pro',
+
+      'docs.label': 'Documents',
+      'docs.title': 'Téléchargements',
+      'docs.cv_title': 'Curriculum Vitae',
+      'docs.cv_desc': 'CV complet · PDF · Français',
+      'docs.memoire_title': 'Mémoire de maîtrise',
+      'docs.memoire_desc': 'Optimisation du remblayage · PDF · 2026',
+      'docs.download': 'Télécharger →',
+      'docs.unavailable': 'Bientôt disponible',
 
       'hero.greeting': '{ Bonjour, je suis }',
       'hero.subtitle': 'Ingénieur en génie minier.<br/>Simulation, modélisation, données.',
@@ -1338,7 +1547,23 @@ Mining Engineer · Montréal, QC">
       'nav.projects': 'Projects',
       'nav.experience': 'Experience',
       'nav.formation': 'Education',
+      'nav.documents': 'Documents',
       'nav.contact': 'Contact',
+
+      'stats.projects': 'Major projects',
+      'stats.internships': 'Industrial internships',
+      'stats.trucks': 'Simulated trucks',
+      'stats.breakdowns': 'Breakdowns analyzed',
+      'stats.languages': 'Professional languages',
+
+      'docs.label': 'Documents',
+      'docs.title': 'Downloads',
+      'docs.cv_title': 'Curriculum Vitae',
+      'docs.cv_desc': 'Full CV · PDF · French',
+      'docs.memoire_title': "Master's thesis",
+      'docs.memoire_desc': 'Backfilling optimization · PDF · 2026',
+      'docs.download': 'Download →',
+      'docs.unavailable': 'Coming soon',
 
       'hero.greeting': "{ Hi, I'm }",
       'hero.subtitle': 'Mining engineer.<br/>Simulation, modeling, data.',
@@ -1521,6 +1746,31 @@ Mining Engineer · Montréal, QC">
       saved = browser.startsWith('en') ? 'en' : 'fr';
     }
     applyLang(saved);
+  })();
+
+  // Check availability of downloadable documents
+  (function checkDocs() {
+    document.querySelectorAll('.doc-card[href$=".pdf"]').forEach(async card => {
+      try {
+        const res = await fetch(card.getAttribute('href'), { method: 'HEAD' });
+        if (!res.ok) markUnavailable(card);
+      } catch(e) {
+        markUnavailable(card);
+      }
+    });
+    function markUnavailable(card) {
+      card.classList.add('doc-unavailable');
+      const action = card.querySelector('.doc-action');
+      if (action) {
+        const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+        action.textContent = translations[lang]['docs.unavailable'] || 'Coming soon';
+      }
+      card.addEventListener('click', e => {
+        e.preventDefault();
+        const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
+        alert(lang === 'en' ? 'This document will be available soon.' : 'Ce document sera bientôt disponible.');
+      });
+    }
   })();
 
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
