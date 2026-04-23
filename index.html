@@ -143,6 +143,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -852,6 +853,82 @@
   .doc-card.doc-unavailable:hover { transform: none; border-color: var(--border); box-shadow: none; }
   .doc-card.doc-unavailable .doc-action { color: var(--accent-3); }
 
+  /* Dashboard / charts */
+  .dash-intro {
+    color: var(--text-dim);
+    font-size: 15px;
+    max-width: 700px;
+    margin-bottom: 30px;
+  }
+  .dash-intro strong { color: var(--text); font-weight: 500; }
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+  .chart-card:hover { border-color: var(--border-light); }
+  .chart-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+  .chart-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .chart-container {
+    position: relative;
+    height: 260px;
+  }
+  .dash-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .sum-item {
+    padding: 8px 12px;
+    border-right: 1px solid var(--border);
+  }
+  .sum-item:last-child { border-right: none; }
+  .sum-label {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .sum-val {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.5px;
+  }
+  .dash-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   footer {
     text-align: center;
     padding: 30px 40px;
@@ -884,6 +961,9 @@
     .form-grid { grid-template-columns: 1fr; }
     .contact-wrapper { padding: 28px 20px; }
     .timeline { padding-left: 24px; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .sum-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .sum-item:last-child { border-bottom: none; }
   }
   @media (max-width: 560px) {
     nav ul { display: none; }
@@ -898,6 +978,7 @@
         <li><a href="#about" data-i18n="nav.about">À propos</a></li>
         <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
         <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#dashboard" data-i18n="nav.dashboard">Dashboard</a></li>
         <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
         <li><a href="#formation" data-i18n="nav.formation">Formation</a></li>
         <li><a href="#documents" data-i18n="nav.documents">Documents</a></li>
@@ -1227,9 +1308,50 @@
     </div>
   </section>
 
+  <section id="dashboard">
+    <span class="section-label" data-i18n="dash.label">Dashboard</span>
+    <h2 class="section-title"><span class="num">04.</span> <span data-i18n="dash.title">Simulation en chiffres</span></h2>
+    <p class="dash-intro" data-i18n-html="dash.intro">
+      Données réelles extraites de la simulation AnyLogic : <strong>282 camions</strong>,
+      <strong>3 pelles</strong>, <strong>2 bulldozers</strong>, <strong>3 stations carburant</strong>,
+      et <strong>44 641 événements de panne</strong> analysés sur l'horizon d'étude.
+    </p>
+
+    <div class="dashboard-grid">
+      <div class="chart-card">
+        <h3 data-i18n="dash.chart1_title">Distribution TBF — camions</h3>
+        <p class="chart-sub" data-i18n="dash.chart1_sub">Temps entre pannes (heures)</p>
+        <div class="chart-container"><canvas id="chartTBF"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3 data-i18n="dash.chart2_title">Tonnage cumulé par palier</h3>
+        <p class="chart-sub" data-i18n="dash.chart2_sub">Palier Z (m) vs production cumulée (Mt)</p>
+        <div class="chart-container"><canvas id="chartTonnage"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3 data-i18n="dash.chart3_title">Durée des pannes camions</h3>
+        <p class="chart-sub" data-i18n="dash.chart3_sub">Distribution (heures)</p>
+        <div class="chart-container"><canvas id="chartDuration"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3 data-i18n="dash.chart4_title">Positions des équipements</h3>
+        <p class="chart-sub" data-i18n="dash.chart4_sub">Pelles · Stations · Bulldozers (coord. X/Y)</p>
+        <div class="chart-container"><canvas id="chartMap"></canvas></div>
+      </div>
+    </div>
+
+    <div class="dash-summary">
+      <div class="sum-item"><span class="sum-label" data-i18n="dash.sum1">TBF moyen camions</span><span class="sum-val" id="sumTBF">—</span></div>
+      <div class="sum-item"><span class="sum-label" data-i18n="dash.sum2">TBF moyen pelles</span><span class="sum-val" id="sumTBFP">—</span></div>
+      <div class="sum-item"><span class="sum-label" data-i18n="dash.sum3">TBF moyen bulldozers</span><span class="sum-val" id="sumTBFB">—</span></div>
+      <div class="sum-item"><span class="sum-label" data-i18n="dash.sum4">Durée panne moy.</span><span class="sum-val" id="sumDur">—</span></div>
+      <div class="sum-item"><span class="sum-label" data-i18n="dash.sum5">Tonnage total</span><span class="sum-val" id="sumTon">—</span></div>
+    </div>
+  </section>
+
   <section id="experience">
     <span class="section-label" data-i18n="exp.label">Expérience</span>
-    <h2 class="section-title"><span class="num">04.</span> <span data-i18n="exp.title">Parcours professionnel</span></h2>
+    <h2 class="section-title"><span class="num">05.</span> <span data-i18n="exp.title">Parcours professionnel</span></h2>
     <div class="timeline">
       <div class="timeline-item">
         <div class="date" data-i18n="exp.e1_date">Juillet – Août 2023</div>
@@ -1256,7 +1378,7 @@
 
   <section id="formation">
     <span class="section-label" data-i18n="form.label">Formation</span>
-    <h2 class="section-title"><span class="num">05.</span> <span data-i18n="form.title">Études</span></h2>
+    <h2 class="section-title"><span class="num">06.</span> <span data-i18n="form.title">Études</span></h2>
     <div class="formation-grid">
       <div class="formation-card">
         <div class="year">2023 — 2026</div>
@@ -1278,7 +1400,7 @@
 
   <section id="documents">
     <span class="section-label" data-i18n="docs.label">Documents</span>
-    <h2 class="section-title"><span class="num">06.</span> <span data-i18n="docs.title">Téléchargements</span></h2>
+    <h2 class="section-title"><span class="num">07.</span> <span data-i18n="docs.title">Téléchargements</span></h2>
     <div class="docs-grid">
       <a href="assets/cv.pdf" download="CV_Abdelghaffour_ElMchiek.pdf" class="doc-card" target="_blank" rel="noopener">
         <div class="doc-icon-wrap">
@@ -1300,12 +1422,22 @@
           <span class="doc-action" data-i18n="docs.download">Télécharger →</span>
         </div>
       </a>
+      <a href="assets/simulation_data.xlsx" download="Simulation_AnyLogic_282camions.xlsx" class="doc-card" target="_blank" rel="noopener">
+        <div class="doc-icon-wrap">
+          <span class="doc-icon">📊</span>
+        </div>
+        <div class="doc-info">
+          <h3 data-i18n="docs.sim_title">Données de simulation</h3>
+          <p data-i18n="docs.sim_desc">Simulation AnyLogic · Excel · 11 feuilles · 2.4 Mo</p>
+          <span class="doc-action" data-i18n="docs.download">Télécharger →</span>
+        </div>
+      </a>
     </div>
   </section>
 
   <section id="contact">
     <span class="section-label" data-i18n="contact.label">Contact</span>
-    <h2 class="section-title"><span class="num">07.</span> <span data-i18n="contact.title">Discutons !</span></h2>
+    <h2 class="section-title"><span class="num">08.</span> <span data-i18n="contact.title">Discutons !</span></h2>
     <div class="contact-intro">
       <p data-i18n="contact.intro">
         Une opportunité, un projet, une collaboration ? Remplissez le formulaire
@@ -1385,6 +1517,7 @@ Mining Engineer · Montréal, QC">
       'nav.about': 'À propos',
       'nav.skills': 'Compétences',
       'nav.projects': 'Projets',
+      'nav.dashboard': 'Dashboard',
       'nav.experience': 'Expérience',
       'nav.formation': 'Formation',
       'nav.documents': 'Documents',
@@ -1396,12 +1529,31 @@ Mining Engineer · Montréal, QC">
       'stats.breakdowns': 'Pannes analysées',
       'stats.languages': 'Langues pro',
 
+      'dash.label': 'Dashboard',
+      'dash.title': 'Simulation en chiffres',
+      'dash.intro': "Données réelles extraites de la simulation AnyLogic : <strong>282 camions</strong>, <strong>3 pelles</strong>, <strong>2 bulldozers</strong>, <strong>3 stations carburant</strong>, et <strong>44 641 événements de panne</strong> analysés sur l'horizon d'étude.",
+      'dash.chart1_title': 'Distribution TBF — camions',
+      'dash.chart1_sub': 'Temps entre pannes (heures)',
+      'dash.chart2_title': 'Tonnage cumulé par palier',
+      'dash.chart2_sub': 'Palier Z (m) vs production cumulée (Mt)',
+      'dash.chart3_title': 'Durée des pannes camions',
+      'dash.chart3_sub': 'Distribution (heures)',
+      'dash.chart4_title': 'Positions des équipements',
+      'dash.chart4_sub': 'Pelles · Stations · Bulldozers (coord. X/Y)',
+      'dash.sum1': 'TBF moyen camions',
+      'dash.sum2': 'TBF moyen pelles',
+      'dash.sum3': 'TBF moyen bulldozers',
+      'dash.sum4': 'Durée panne moy.',
+      'dash.sum5': 'Tonnage total',
+
       'docs.label': 'Documents',
       'docs.title': 'Téléchargements',
       'docs.cv_title': 'Curriculum Vitae',
       'docs.cv_desc': 'CV complet · PDF · Français',
       'docs.memoire_title': 'Mémoire de maîtrise',
       'docs.memoire_desc': 'Optimisation du remblayage · PDF · 2026',
+      'docs.sim_title': 'Données de simulation',
+      'docs.sim_desc': 'Simulation AnyLogic · Excel · 11 feuilles · 2.4 Mo',
       'docs.download': 'Télécharger →',
       'docs.unavailable': 'Bientôt disponible',
 
@@ -1545,6 +1697,7 @@ Mining Engineer · Montréal, QC">
       'nav.about': 'About',
       'nav.skills': 'Skills',
       'nav.projects': 'Projects',
+      'nav.dashboard': 'Dashboard',
       'nav.experience': 'Experience',
       'nav.formation': 'Education',
       'nav.documents': 'Documents',
@@ -1556,12 +1709,31 @@ Mining Engineer · Montréal, QC">
       'stats.breakdowns': 'Breakdowns analyzed',
       'stats.languages': 'Professional languages',
 
+      'dash.label': 'Dashboard',
+      'dash.title': 'Simulation in numbers',
+      'dash.intro': "Real data extracted from the AnyLogic simulation: <strong>282 trucks</strong>, <strong>3 shovels</strong>, <strong>2 bulldozers</strong>, <strong>3 fuel stations</strong>, and <strong>44,641 breakdown events</strong> analyzed over the study horizon.",
+      'dash.chart1_title': 'TBF distribution — trucks',
+      'dash.chart1_sub': 'Time between failures (hours)',
+      'dash.chart2_title': 'Cumulative tonnage per bench',
+      'dash.chart2_sub': 'Bench Z (m) vs cumulative production (Mt)',
+      'dash.chart3_title': 'Truck breakdown duration',
+      'dash.chart3_sub': 'Distribution (hours)',
+      'dash.chart4_title': 'Equipment positions',
+      'dash.chart4_sub': 'Shovels · Stations · Bulldozers (X/Y coord.)',
+      'dash.sum1': 'Mean truck TBF',
+      'dash.sum2': 'Mean shovel TBF',
+      'dash.sum3': 'Mean bulldozer TBF',
+      'dash.sum4': 'Mean breakdown duration',
+      'dash.sum5': 'Total tonnage',
+
       'docs.label': 'Documents',
       'docs.title': 'Downloads',
       'docs.cv_title': 'Curriculum Vitae',
       'docs.cv_desc': 'Full CV · PDF · French',
       'docs.memoire_title': "Master's thesis",
       'docs.memoire_desc': 'Backfilling optimization · PDF · 2026',
+      'docs.sim_title': 'Simulation data',
+      'docs.sim_desc': 'AnyLogic simulation · Excel · 11 sheets · 2.4 MB',
       'docs.download': 'Download →',
       'docs.unavailable': 'Coming soon',
 
@@ -1746,6 +1918,142 @@ Mining Engineer · Montréal, QC">
       saved = browser.startsWith('en') ? 'en' : 'fr';
     }
     applyLang(saved);
+  })();
+
+  // Render simulation dashboard from JSON data
+  (function renderDashboard() {
+    function waitForChart(cb, tries) {
+      tries = tries || 0;
+      if (typeof Chart !== 'undefined') return cb();
+      if (tries > 60) return;
+      setTimeout(() => waitForChart(cb, tries + 1), 100);
+    }
+    fetch('assets/sim_data.json')
+      .then(r => r.ok ? r.json() : Promise.reject('no data'))
+      .then(data => waitForChart(() => initCharts(data)))
+      .catch(() => { /* dashboard data not available yet */ });
+
+    function initCharts(data) {
+      const colors = {
+        accent: '#3b82f6', accent2: '#10b981',
+        accent3: '#f59e0b', accent4: '#8b5cf6'
+      };
+      Chart.defaults.color = '#9ca3af';
+      Chart.defaults.borderColor = '#1f2937';
+      Chart.defaults.font.family = "'Inter', sans-serif";
+
+      // Chart 1 — TBF histogram trucks
+      new Chart(document.getElementById('chartTBF'), {
+        type: 'bar',
+        data: {
+          labels: data.tbf_trucks_histogram.map(b => b.label),
+          datasets: [{
+            label: 'Pannes',
+            data: data.tbf_trucks_histogram.map(b => b.count),
+            backgroundColor: colors.accent + 'aa',
+            borderColor: colors.accent,
+            borderWidth: 1,
+            borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+            y: { grid: { color: '#1f2937' } }
+          }
+        }
+      });
+
+      // Chart 2 — Tonnage cumul line
+      new Chart(document.getElementById('chartTonnage'), {
+        type: 'line',
+        data: {
+          labels: data.tonnage_cumul.map(t => t.z),
+          datasets: [{
+            label: 'Cumul (Mt)',
+            data: data.tonnage_cumul.map(t => t.cumul_Mt),
+            borderColor: colors.accent2,
+            backgroundColor: colors.accent2 + '33',
+            fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, reverse: true, title: { display: true, text: 'Z (m)' } },
+            y: { grid: { color: '#1f2937' }, title: { display: true, text: 'Mt' } }
+          }
+        }
+      });
+
+      // Chart 3 — Duration histogram
+      new Chart(document.getElementById('chartDuration'), {
+        type: 'bar',
+        data: {
+          labels: data.duration_trucks_histogram.map(b => b.label),
+          datasets: [{
+            data: data.duration_trucks_histogram.map(b => b.count),
+            backgroundColor: colors.accent3 + 'aa',
+            borderColor: colors.accent3,
+            borderWidth: 1,
+            borderRadius: 3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+            y: { grid: { color: '#1f2937' } }
+          }
+        }
+      });
+
+      // Chart 4 — Positions scatter
+      new Chart(document.getElementById('chartMap'), {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Pelles',
+              data: data.positions.pelles.map(p => ({ x: p.x, y: p.y })),
+              backgroundColor: colors.accent, pointRadius: 10, pointHoverRadius: 14
+            },
+            {
+              label: 'Stations',
+              data: data.positions.stations.map(s => ({ x: s.x, y: s.y })),
+              backgroundColor: colors.accent3, pointRadius: 10, pointStyle: 'triangle', pointHoverRadius: 14
+            },
+            {
+              label: 'Bulldozers',
+              data: data.positions.bulldozers.map(b => ({ x: b.x, y: b.y })),
+              backgroundColor: colors.accent4, pointRadius: 10, pointStyle: 'rectRounded', pointHoverRadius: 14
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { labels: { usePointStyle: true, boxWidth: 10 } } },
+          scales: {
+            x: { grid: { color: '#1f2937' }, title: { display: true, text: 'X (m)' } },
+            y: { grid: { color: '#1f2937' }, title: { display: true, text: 'Y (m)' } }
+          }
+        }
+      });
+
+      // Summary metrics
+      const s = data.summary;
+      const fmt = v => (typeof v === 'number' ? v.toLocaleString('fr-CA') : v);
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      set('sumTBF', s.mean_tbf_trucks + 'h');
+      set('sumTBFP', s.mean_tbf_shovels + 'h');
+      set('sumTBFB', s.mean_tbf_bulldozers + 'h');
+      set('sumDur', s.mean_duration_trucks + 'h');
+      set('sumTon', s.total_tonnage_Mt + ' Mt');
+    }
   })();
 
   // Check availability of downloadable documents
